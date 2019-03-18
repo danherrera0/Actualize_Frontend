@@ -47,11 +47,9 @@ class App extends React.Component {
     fetch("http://localhost:3000/api/v1/columns")
       .then(r => r.json())
       .then(apiColumns => {
-        console.log(apiColumns);
         let myColumns = apiColumns.reduce((final, elem) => {
           return Object.assign(final, elem);
         }, {});
-        // debugger;
         console.log(myColumns);
 
         let col1 = myColumns["column-1"].task_ids;
@@ -62,15 +60,10 @@ class App extends React.Component {
         let col2Tasks = col2.map(task => `task-${task.id}`);
         let col3Tasks = col3.map(task => `task-${task.id}`);
 
-        debugger;
-
         console.log(col1Tasks);
-        // this.setState(
-        //   {
-        //     columns: myColumns
-        //   },
-        //   console.log(this.state)
-        // );
+        this.setState({
+          columns: myColumns
+        });
       });
   }
 
@@ -151,7 +144,7 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.tasks);
+    console.log(this.state.columns["column-1"]);
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}
