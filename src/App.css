@@ -17,3 +17,14 @@ img {
 html {
   background-color: ;
 }
+
+.Card {
+  background-color: white;
+  height: 150px;
+  width: 80%;
+  display: inline-block;
+  border-style: dotted;
+  border-color: black;
+  margin: 2%;
+  box-shadow: 8px 8px #09090966;
+}
