@@ -36,28 +36,6 @@ class App extends React.Component {
     col3Tasks: []
   };
 
-  updateTaskIds = () => {
-    this.setState({
-      columns: {
-        "column-1": {
-          id: this.state.id,
-          title: this.state.title,
-          task_ids: this.state.col1Tasks
-        },
-        "column-2": {
-          id: this.state.id,
-          title: this.state.title,
-          task_ids: this.state.col2Tasks
-        },
-        "column-3": {
-          id: this.state.id,
-          title: this.state.title,
-          task_ids: this.state.col3Tasks
-        }
-      }
-    });
-  };
-
   componentDidMount() {
     fetch("http://localhost:3000/api/v1/tasks")
       .then(r => r.json())
@@ -75,6 +53,7 @@ class App extends React.Component {
         let myColumns = apiColumns.reduce((final, elem) => {
           return Object.assign(final, elem);
         }, {});
+        console.log(myColumns);
 
         let col1 = myColumns["column-1"].task_ids;
         let col2 = myColumns["column-2"].task_ids;
@@ -84,15 +63,13 @@ class App extends React.Component {
         let col2Tasks = col2.map(task => `task-${task.id}`);
         let col3Tasks = col3.map(task => `task-${task.id}`);
 
-        this.setState(
-          {
-            columns: myColumns,
-            col1Tasks: col1Tasks,
-            col2Tasks: col2Tasks,
-            col3Tasks: col3Tasks
-          }
-          // () => this.updateTaskIds()
-        );
+        console.log(col1Tasks);
+        this.setState({
+          columns: myColumns,
+          col1Tasks: col1Tasks,
+          col2Tasks: col2Tasks,
+          col3Tasks: col3Tasks
+        });
         // this.setState({
         //   columns: {
         //     "column-1": {
@@ -100,7 +77,6 @@ class App extends React.Component {
         //     }
         //   }
         // });
-        //end of second fetch;
       });
   }
 
@@ -181,7 +157,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}
@@ -190,7 +165,6 @@ class App extends React.Component {
       >
         <NavBar />
         <Container>
-          {this.updateTaskIds()}
           {this.state.columnOrder.map((columnId, index) => {
             const column = this.state.columns[columnId];
             const tasks = [];
