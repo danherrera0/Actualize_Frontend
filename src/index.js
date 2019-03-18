@@ -30,7 +30,32 @@ class App extends React.Component {
         // task_ids are used to indicate ownership and maintain order in the lists
       }
     },
-    columnOrder: ["column-1", "column-2", "column-3"]
+    columnOrder: ["column-1", "column-2", "column-3"],
+    col1Tasks: [],
+    col2Tasks: [],
+    col3Tasks: []
+  };
+
+  updateTaskIds = () => {
+    this.setState({
+      columns: {
+        "column-1": {
+          id: this.state.id,
+          title: this.state.title,
+          task_ids: this.state.col1Tasks
+        },
+        "column-2": {
+          id: this.state.id,
+          title: this.state.title,
+          task_ids: this.state.col2Tasks
+        },
+        "column-3": {
+          id: this.state.id,
+          title: this.state.title,
+          task_ids: this.state.col3Tasks
+        }
+      }
+    });
   };
 
   componentDidMount() {
@@ -50,7 +75,6 @@ class App extends React.Component {
         let myColumns = apiColumns.reduce((final, elem) => {
           return Object.assign(final, elem);
         }, {});
-        console.log(myColumns);
 
         let col1 = myColumns["column-1"].task_ids;
         let col2 = myColumns["column-2"].task_ids;
@@ -60,10 +84,23 @@ class App extends React.Component {
         let col2Tasks = col2.map(task => `task-${task.id}`);
         let col3Tasks = col3.map(task => `task-${task.id}`);
 
-        console.log(col1Tasks);
-        this.setState({
-          columns: myColumns
-        });
+        this.setState(
+          {
+            columns: myColumns,
+            col1Tasks: col1Tasks,
+            col2Tasks: col2Tasks,
+            col3Tasks: col3Tasks
+          }
+          // () => this.updateTaskIds()
+        );
+        // this.setState({
+        //   columns: {
+        //     "column-1": {
+        //       task_ids: col1Tasks
+        //     }
+        //   }
+        // });
+        //end of second fetch;
       });
   }
 
@@ -144,7 +181,7 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.columns["column-1"]);
+    console.log(this.state);
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}
@@ -153,6 +190,7 @@ class App extends React.Component {
       >
         <NavBar />
         <Container>
+          {this.updateTaskIds()}
           {this.state.columnOrder.map((columnId, index) => {
             const column = this.state.columns[columnId];
             const tasks = [];
