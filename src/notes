@@ -76,3 +76,21 @@ render() {
     // console.log(columnTasks);
   */
   }
+
+
+  {
+    "column-1": {
+      id: "column-1",
+      title: "To do",
+      task_ids: ["task-1"]
+    },
+    "column-2": {
+      id: "column-2",
+      title: "In Progress",
+      task_ids: ["task-2"]
+    },
+    "column-3": {
+      id: "column-3",
+      title: "Done",
+      task_ids: ["task-3"]
+    }

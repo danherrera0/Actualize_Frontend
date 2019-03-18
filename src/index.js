@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./column";
 import NavBar from "./NavBar";
+import logo from "./logo.png";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -27,6 +28,7 @@ class App extends React.Component {
         id: "column-3",
         title: "Done",
         task_ids: ["task-3"]
+        // task_ids are used to indicate ownership and maintain order in the lists
       }
     },
     columnOrder: ["column-1", "column-2", "column-3"]
@@ -51,6 +53,13 @@ class App extends React.Component {
           return Object.assign(final, elem);
         }, {});
         console.log(myColumns);
+        console.log(myColumns["column-1"]);
+        // this.setState(
+        //   {
+        //     columns: myColumns
+        //   },
+        //   console.log(this.state)
+        // );
       });
   }
 

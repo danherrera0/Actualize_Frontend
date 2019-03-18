@@ -29,7 +29,7 @@ class Column extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <Container>
+      <Container className="Container">
         <Title>{this.props.column.title}</Title>
         <Droppable droppableId={this.props.column.id}>
           {(provided, snapshot) => (
