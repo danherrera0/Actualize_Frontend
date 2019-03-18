@@ -30,3 +30,26 @@ const initialData = {
 };
 
 export default initialData;
+{
+  /*columns: {
+  "column-1": {
+    id: "column-1",
+    title: "To do",
+    task_ids: ["task-1"]
+  },
+  "column-2": {
+    id: "column-2",
+    title: "In Progress",
+    task_ids: ["task-2"]
+  },
+  "column-3": {
+    id: "column-3",
+    title: "Done",
+    task_ids: ["task-3"]
+    // task_ids are used to indicate ownership and maintain order in the lists
+  }
+},
+columnOrder: ["column-1", "column-2", "column-3"]
+};
+*/
+}

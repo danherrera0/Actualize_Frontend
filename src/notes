@@ -1,0 +1,78 @@
+{/*// <DragDropContext
+//   onDragEnd={this.onDragEnd}
+//   onDragStart={this.onDragStart}
+//   onDragUpdate={this.onDragUpdate}
+// >
+//   <Container>
+//     {this.state.columnOrder.map((columnId, index) => {
+//       const column = this.state.columns[columnId];
+//       console.log(column);
+//
+//       // const tasks = [];
+//       // let columnTasks = tasks.filter(task => {
+//       //   return task.column_id === `column-${task.column_id}`;
+//       // });
+//       // let columnTaskIds = column.task_ids;
+//       // let columnTasks = columnTaskIds.map(task => {
+//       //   return `task-${task.id}`;
+//       // });
+//       // console.log(columnTasks);
+//
+//       // column.task_ids.forEach(taskId => {
+//       //   if (this.state.tasks[taskId])
+//       //     return tasks.push(this.state.tasks[taskId]);
+//       // });
+//
+//       // if (tasks.length > 0)
+//       //   return (
+//       //     <Column
+//       //       key={column.id}
+//       //       column={column}
+//       //       // tasks={tasks.length > 0 ? columnTasks : null}
+//       //     />
+//       //   );
+//     })}
+//   </Container>
+// </DragDropContext>
+*/}
+
+
+render() {
+  console.log(this.state.columns);
+  if (this.state.columns) {
+    let columns = this.state.columnOrder.map((columnId, index) => {
+      const column = this.state.columns[columnId];
+      return column;
+    });
+    console.log(columns);
+    // if (columns.length > 0) {
+    //   let columnTaskIds = columns.map(column => {
+    //     console.log(column);
+    //     return column.task_ids;
+    //   });
+
+    /*//   console.log(columnTaskIds);
+    // }
+    //   let allTasks = this.state.tasks;
+    //   let filteredTasks = Object.values(allTasks);
+    //   // let columnTasks = filteredTasks.filter(task => {
+    //   //   return task.column_id === column.id;
+    //   // });
+    //   console.log(filteredTasks);
+    //   // const tasks = [];
+    // });
+    // let myColumns = Object.values(this.state.columns);
+    // console.log(myColumns);
+
+    // let columnTaskIds = columns
+    //   .map(column => {
+    //     return column.task_ids;
+    //   })
+    //   .flat();
+    // console.log(columnTaskIds);
+    // let columnTasks = columnTaskIds.map(task => {
+    //   return `task-${task.id}`;
+    // });
+    // console.log(columnTasks);
+  */
+  }

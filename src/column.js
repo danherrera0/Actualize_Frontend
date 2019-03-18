@@ -31,19 +31,15 @@ class Column extends React.Component {
     return (
       <Container>
         <Title>{this.props.column.title}</Title>
-        <Droppable
-          droppableId={this.props.column.id}
-          // isDropDisabled={this.props.isDropDisabled}
-        >
+        <Droppable droppableId={this.props.column.id}>
           {(provided, snapshot) => (
             <TaskList
               ref={provided.innerRef}
-              // innerRef={provided.innerRef}
               {...provided.droppableProps}
               isDraggingOver={snapshot.isDraggingOver}
             >
               {this.props.tasks.map((task, index) => (
-                <Task task={task} index={index} />
+                <Task key={task.task_id} task={task} index={index} />
               ))}
               {provided.placeholder}
             </TaskList>

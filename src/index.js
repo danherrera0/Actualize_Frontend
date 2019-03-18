@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./column";
+import NavBar from "./NavBar";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -26,7 +27,6 @@ class App extends React.Component {
         id: "column-3",
         title: "Done",
         task_ids: ["task-3"]
-        // task_ids are used to indicate ownership and maintain order in the lists
       }
     },
     columnOrder: ["column-1", "column-2", "column-3"]
@@ -36,17 +36,21 @@ class App extends React.Component {
     fetch("http://localhost:3000/api/v1/tasks")
       .then(r => r.json())
       .then(tasks => {
-        const firstMap = tasks.map(task => {
-          return Object.values(task);
-        });
-        let flattened = firstMap.flat();
-        let second = flattened.reduce((final, elem) => {
+        let myTasks = tasks.reduce((final, elem) => {
           return Object.assign(final, elem);
         }, {});
-        console.log(second);
         this.setState({
-          tasks: second
+          tasks: myTasks
         });
+      });
+    fetch("http://localhost:3000/api/v1/columns")
+      .then(r => r.json())
+      .then(apiColumns => {
+        console.log(apiColumns);
+        let myColumns = apiColumns.reduce((final, elem) => {
+          return Object.assign(final, elem);
+        }, {});
+        console.log(myColumns);
       });
   }
 
@@ -134,16 +138,16 @@ class App extends React.Component {
         onDragStart={this.onDragStart}
         onDragUpdate={this.onDragUpdate}
       >
+        <NavBar />
         <Container>
           {this.state.columnOrder.map((columnId, index) => {
             const column = this.state.columns[columnId];
-            const tasks = column.task_ids.map(taskId => {
-              return this.state.tasks[taskId];
+            const tasks = [];
+            column.task_ids.forEach(taskId => {
+              if (this.state.tasks[taskId])
+                return tasks.push(this.state.tasks[taskId]);
             });
-            console.log(this.state.tasks);
-            console.log(tasks);
-            console.log(column.id);
-            // return <Column key={column.id} column={column} tasks={tasks} />;
+            return <Column key={column.id} column={column} tasks={tasks} />;
           })}
         </Container>
       </DragDropContext>
