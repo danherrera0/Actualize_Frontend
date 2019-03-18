@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./column";
 import NavBar from "./NavBar";
-import logo from "./logo.png";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -52,8 +51,20 @@ class App extends React.Component {
         let myColumns = apiColumns.reduce((final, elem) => {
           return Object.assign(final, elem);
         }, {});
+        // debugger;
         console.log(myColumns);
-        console.log(myColumns["column-1"]);
+
+        let col1 = myColumns["column-1"].task_ids;
+        let col2 = myColumns["column-2"].task_ids;
+        let col3 = myColumns["column-3"].task_ids;
+
+        let col1Tasks = col1.map(task => `task-${task.id}`);
+        let col2Tasks = col2.map(task => `task-${task.id}`);
+        let col3Tasks = col3.map(task => `task-${task.id}`);
+
+        debugger;
+
+        console.log(col1Tasks);
         // this.setState(
         //   {
         //     columns: myColumns
