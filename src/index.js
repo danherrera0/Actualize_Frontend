@@ -53,7 +53,7 @@ class App extends React.Component {
         let myColumns = apiColumns.reduce((final, elem) => {
           return Object.assign(final, elem);
         }, {});
-        console.log(myColumns);
+        // console.log(myColumns);
 
         let col1 = myColumns["column-1"].task_ids;
         let col2 = myColumns["column-2"].task_ids;
@@ -94,7 +94,7 @@ class App extends React.Component {
         );
       });
   }
-
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   onDragStart = () => {
     const homeIndex = start =>
       this.state.columnOrder.indexOf(start.source.droppableId);
@@ -119,20 +119,22 @@ class App extends React.Component {
     const { destination, source, draggableId } = result;
     if (!destination) {
       return;
+      //drops outside of column - does nothing
     }
     if (
       destination.droppableId === source.droppableId &&
       destination.index === source.index
     ) {
       return;
+      //The item was dropped in original location - nothing to do
     }
     const start = this.state.columns[source.droppableId];
     const finish = this.state.columns[destination.droppableId];
 
     if (start === finish) {
       const newtask_ids = Array.from(start.task_ids);
-      newtask_ids.splice(source.index, 1);
-      newtask_ids.splice(destination.index, 0, draggableId);
+      newtask_ids.splice(source.index, 1); //from this index we want to remove one item - the dragged item
+      newtask_ids.splice(destination.index, 0, draggableId); //Starting from destination index, insert draggableId which is the taskId
 
       const newColumn = {
         ...start,
@@ -182,6 +184,9 @@ class App extends React.Component {
         <Container>
           {this.state.columnOrder.map((columnId, index) => {
             const column = this.state.columns[columnId];
+            // const tasks = column.task_ids.map(taskId => {
+            //   return this.state.tasks[taskId];
+            // });
             const tasks = [];
             column.task_ids.forEach(taskId => {
               if (this.state.tasks[taskId])

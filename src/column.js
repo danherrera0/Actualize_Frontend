@@ -27,17 +27,13 @@ const TaskList = styled.div`
 
 class Column extends React.Component {
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <Container className="Container">
         <Title>{this.props.column.title}</Title>
         <Droppable droppableId={`column-${this.props.column.id}`}>
-          {(provided, snapshot) => (
-            <TaskList
-              ref={provided.innerRef}
-              {...provided.droppableProps}
-              // isDraggingOver={snapshot.isDraggingOver}
-            >
+          {provided => (
+            <TaskList {...provided.droppableProps} ref={provided.innerRef}>
               {this.props.tasks.map((task, index) => (
                 <Task key={task.task_id} task={task} index={index} />
               ))}
