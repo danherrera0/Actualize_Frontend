@@ -7,7 +7,7 @@
   margin-bottom: 20px;
   border-radius: 10px;
   border-style: solid;
-  border-color: black;
+  border-color: #36454f;
   border-width: medium;
 }
 
@@ -17,7 +17,7 @@ img {
   border-right-style: solid;
   border-left-style: solid;
   border-top-style: solid;
-  border-color: black;
+  border-color: #36454f;
   text-align: center;
   margin: 5px;
   border-width: medium;
@@ -50,7 +50,7 @@ html {
   margin: 3%;
   margin-left: 5%;
   border-radius: 10px;
-  box-shadow: 10px 10px #aeaeae;
+  box-shadow: 6px 6px #a8a8a8;
   border-style: solid;
   border-color: grey;
   border-width: thin;

@@ -36,11 +36,7 @@ class Column extends React.Component {
     this.setState({
       showForm: !this.state.showForm
     });
-    //add card
-    //post to backend
   };
-
-  addCard = () => {};
 
   render() {
     return (

@@ -172,7 +172,8 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.state.columns["column-1"]);
+    console.log(this.state.tasks);
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}
