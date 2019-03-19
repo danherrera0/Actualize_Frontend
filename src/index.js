@@ -172,9 +172,24 @@ class App extends React.Component {
     this.setState(newState);
   };
 
+  deleteCard = (event, card) => {
+    let deletedId = parseInt(event.target.id.split("-").flat()[1]);
+    // fetch(`http://localhost:3000/api/v1/tasks/${deletedId}`, {
+    //   method: "DELETE"
+    // });
+    // console.log(card.task_id);
+    let column1task_ids = this.state.columns["column-1"].task_ids;
+    if (column1task_ids.includes(card.task_id)) {
+      let deletedIndex = this.state.columns["column-1"].task_ids.indexOf(
+        card.task_id
+      );
+      column1task_ids.splice(deletedIndex, 1);
+      console.log(column1task_ids);
+      //set state here
+    }
+  };
+
   render() {
-    console.log(this.state.columns["column-1"]);
-    console.log(this.state.tasks);
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}
@@ -190,7 +205,14 @@ class App extends React.Component {
               if (this.state.tasks[taskId])
                 return tasks.push(this.state.tasks[taskId]);
             });
-            return <Column key={column.id} column={column} tasks={tasks} />;
+            return (
+              <Column
+                delete={this.deleteCard}
+                key={column.id}
+                column={column}
+                tasks={tasks}
+              />
+            );
           })}
         </Container>
         <Form />

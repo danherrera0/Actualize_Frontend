@@ -34,7 +34,12 @@ class Column extends React.Component {
           {provided => (
             <TaskList {...provided.droppableProps} ref={provided.innerRef}>
               {this.props.tasks.map((task, index) => (
-                <Task key={task.task_id} task={task} index={index} />
+                <Task
+                  delete={this.props.delete}
+                  key={task.task_id}
+                  task={task}
+                  index={index}
+                />
               ))}
               {provided.placeholder}
             </TaskList>
