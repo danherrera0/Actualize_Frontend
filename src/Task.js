@@ -12,6 +12,7 @@ const Container = styled.div`
 
 export default class Task extends React.Component {
   render() {
+    console.log(this.props.task.task_id);
     return (
       <Draggable draggableId={this.props.task.task_id} index={this.props.index}>
         {(provided, snapshot) => (

@@ -63,20 +63,35 @@ class App extends React.Component {
         let col2Tasks = col2.map(task => `task-${task.id}`);
         let col3Tasks = col3.map(task => `task-${task.id}`);
 
-        console.log(col1Tasks);
-        this.setState({
-          columns: myColumns,
-          col1Tasks: col1Tasks,
-          col2Tasks: col2Tasks,
-          col3Tasks: col3Tasks
-        });
-        // this.setState({
-        //   columns: {
-        //     "column-1": {
-        //       task_ids: col1Tasks
-        //     }
-        //   }
-        // });
+        this.setState(
+          {
+            columns: myColumns,
+            col1Tasks: col1Tasks,
+            col2Tasks: col2Tasks,
+            col3Tasks: col3Tasks
+          },
+          () => {
+            this.setState({
+              columns: {
+                "column-1": {
+                  id: this.state.columns["column-1"]["id"],
+                  title: this.state.columns["column-1"]["title"],
+                  task_ids: col1Tasks
+                },
+                "column-2": {
+                  id: this.state.columns["column-2"]["id"],
+                  title: this.state.columns["column-2"]["title"],
+                  task_ids: col2Tasks
+                },
+                "column-3": {
+                  id: this.state.columns["column-3"]["id"],
+                  title: this.state.columns["column-3"]["title"],
+                  task_ids: col3Tasks
+                }
+              }
+            });
+          }
+        );
       });
   }
 
