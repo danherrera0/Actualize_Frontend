@@ -39,6 +39,7 @@ class Column extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <Container className="Container">
         <Title>{this.props.column.title}</Title>
