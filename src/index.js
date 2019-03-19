@@ -95,6 +95,7 @@ class App extends React.Component {
       });
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
   onDragStart = () => {
     const homeIndex = start =>
       this.state.columnOrder.indexOf(start.source.droppableId);
