@@ -119,14 +119,12 @@ class App extends React.Component {
     const { destination, source, draggableId } = result;
     if (!destination) {
       return;
-      //drops outside of column - does nothing
     }
     if (
       destination.droppableId === source.droppableId &&
       destination.index === source.index
     ) {
       return;
-      //The item was dropped in original location - nothing to do
     }
     const start = this.state.columns[source.droppableId];
     const finish = this.state.columns[destination.droppableId];
@@ -184,9 +182,6 @@ class App extends React.Component {
         <Container>
           {this.state.columnOrder.map((columnId, index) => {
             const column = this.state.columns[columnId];
-            // const tasks = column.task_ids.map(taskId => {
-            //   return this.state.tasks[taskId];
-            // });
             const tasks = [];
             column.task_ids.forEach(taskId => {
               if (this.state.tasks[taskId])

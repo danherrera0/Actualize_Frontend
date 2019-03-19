@@ -41,6 +41,11 @@ class Column extends React.Component {
             </TaskList>
           )}
         </Droppable>
+        {this.props.column.title === "To do" ? (
+          <span>
+            <button>Add</button>
+          </span>
+        ) : null}
       </Container>
     );
   }
