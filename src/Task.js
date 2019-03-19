@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
 
 const Container = styled.div`
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey;
   padding: 8px;
   border-radius: 2px;
-  margin-bottom: 8px;
+  margin-bottom: 8px; */
   /* background-color: ${props => (props.isDragging ? "white" : "white")}; */
 `;
 
@@ -23,7 +23,10 @@ export default class Task extends React.Component {
             {...provided.dragHandleProps}
             // isDragging={snapshot.isDragging}
           >
-            {this.props.task.content}
+            <span>
+              <button className="delete">X</button>
+            </span>
+            <p className="text">{this.props.task.content}</p>
           </Container>
         )}
       </Draggable>

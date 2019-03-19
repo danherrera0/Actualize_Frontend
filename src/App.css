@@ -5,6 +5,7 @@
   text-align: center;
   margin-top: 0px;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 img {
@@ -20,13 +21,15 @@ html {
 
 .Card {
   background-color: white;
-  height: 50px;
+  height: 60px;
   width: 80%;
   display: inline-block;
-  border-style: dotted;
-  border-color: black;
+  border-style: solid;
+  border-color: grey;
+  border-width: thin;
   margin: 2%;
   box-shadow: 4px 4px #09090966;
+  align-content: center;
 }
 
 .Container {
@@ -39,4 +42,16 @@ html {
   margin-left: 5%;
   border-radius: 10px;
   box-shadow: 10px 10px #aeaeae;
+}
+
+.delete {
+  position: relative;
+  float: right;
+  height: 15px;
+  border-style: outset;
+  border-radius: 5px;
+}
+
+.Add {
+  border-radius: 5px;
 }

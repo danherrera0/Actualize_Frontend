@@ -43,7 +43,7 @@ class Column extends React.Component {
         </Droppable>
         {this.props.column.title === "To do" ? (
           <span>
-            <button>Add</button>
+            <button className="Add">Add</button>
           </span>
         ) : null}
       </Container>
