@@ -130,7 +130,6 @@ class App extends React.Component {
     }
     const start = this.state.columns[source.droppableId];
     const finish = this.state.columns[destination.droppableId];
-
     if (start === finish) {
       const newtask_ids = Array.from(start.task_ids);
       newtask_ids.splice(source.index, 1); //from this index we want to remove one item - the dragged item
@@ -144,7 +143,7 @@ class App extends React.Component {
         ...this.state,
         columns: {
           ...this.state.columns,
-          [newColumn.id]: newColumn
+          [`column-${newColumn.id}`]: newColumn
         }
       };
       this.setState(newState);
@@ -166,14 +165,15 @@ class App extends React.Component {
       ...this.state,
       columns: {
         ...this.state.columns,
-        [newStart.id]: newStart,
-        [newFinish.id]: newFinish
+        [`column-${newStart.id}`]: newStart,
+        [`column-${newFinish.id}`]: newFinish
       }
     };
     this.setState(newState);
   };
 
   render() {
+    console.log(this.state);
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}
