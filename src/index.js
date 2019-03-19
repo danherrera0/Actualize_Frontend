@@ -179,6 +179,9 @@ class App extends React.Component {
     // });
     // console.log(card.task_id);
     let column1task_ids = this.state.columns["column-1"].task_ids;
+    let column2task_ids = this.state.columns["column-2"].task_ids;
+    let column3task_ids = this.state.columns["column-3"].task_ids;
+
     if (column1task_ids.includes(card.task_id)) {
       let deletedIndex = this.state.columns["column-1"].task_ids.indexOf(
         card.task_id
@@ -186,6 +189,24 @@ class App extends React.Component {
       column1task_ids.splice(deletedIndex, 1);
       console.log(column1task_ids);
       //set state here
+    }
+    if (column2task_ids.includes(card.task_id)) {
+      let deletedIndex = this.state.columns["column-2"].task_ids.indexOf(
+        card.task_id
+      );
+      column2task_ids.splice(deletedIndex, 1);
+      console.log(column2task_ids);
+      //set state here
+    }
+    if (column3task_ids.includes(card.task_id)) {
+      let deletedIndex = this.state.columns["column-3"].task_ids.indexOf(
+        card.task_id
+      );
+      column3task_ids.splice(deletedIndex, 1);
+      console.log(column3task_ids);
+      //set state here
+    } else {
+      return;
     }
   };
 
