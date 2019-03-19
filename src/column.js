@@ -61,7 +61,7 @@ class Column extends React.Component {
         {this.props.column.title === "To do" ? (
           <span>
             <button onClick={this.toggleForm} className="Add">
-              {this.state.showForm ? "Cancel" : "Add"}
+              {this.state.showForm ? "Close" : "Add"}
             </button>
           </span>
         ) : null}

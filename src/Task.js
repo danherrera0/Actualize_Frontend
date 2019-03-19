@@ -11,8 +11,14 @@ const Container = styled.div`
 `;
 
 export default class Task extends React.Component {
+  deleteCard = event => {
+    let deletedId = parseInt(event.target.id.split("-").flat()[1]);
+    fetch(`http://localhost:3000/api/v1/tasks/${deletedId}`, {
+      method: "DELETE"
+    });
+  };
+
   render() {
-    // console.log(this.props);
     return (
       <Draggable draggableId={this.props.task.task_id} index={this.props.index}>
         {provided => (
@@ -24,7 +30,13 @@ export default class Task extends React.Component {
             // isDragging={snapshot.isDragging}
           >
             <span>
-              <button className="delete">X</button>
+              <button
+                onClick={this.deleteCard}
+                id={this.props.task.task_id}
+                className="delete"
+              >
+                X
+              </button>
             </span>
             <p className="text">{this.props.task.content}</p>
           </Container>
