@@ -12,6 +12,7 @@ const Container = styled.div`
 
 export default class Task extends React.Component {
   deleteCard = event => {
+    this.setState({ deleted: true });
     let deletedId = parseInt(event.target.id.split("-").flat()[1]);
     fetch(`http://localhost:3000/api/v1/tasks/${deletedId}`, {
       method: "DELETE"

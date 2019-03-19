@@ -1,7 +1,6 @@
 import React from "react";
 import Task from "./Task";
 import styled from "styled-components";
-import Form from "./Form";
 import { Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div`
@@ -27,19 +26,7 @@ const TaskList = styled.div`
 `;
 
 class Column extends React.Component {
-  state = {
-    showForm: false,
-    content: ""
-  };
-
-  toggleForm = () => {
-    this.setState({
-      showForm: !this.state.showForm
-    });
-  };
-
   render() {
-    console.log(this.props);
     return (
       <Container className="Container">
         <Title>{this.props.column.title}</Title>
@@ -53,19 +40,6 @@ class Column extends React.Component {
             </TaskList>
           )}
         </Droppable>
-
-        {this.state.showForm && this.props.column.title === "To do" ? (
-          <div>
-            <Form />
-          </div>
-        ) : null}
-        {this.props.column.title === "To do" ? (
-          <span>
-            <button onClick={this.toggleForm} className="Add">
-              {this.state.showForm ? "Close" : "Add"}
-            </button>
-          </span>
-        ) : null}
       </Container>
     );
   }

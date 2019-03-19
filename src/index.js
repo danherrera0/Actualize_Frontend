@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./column";
 import NavBar from "./NavBar";
+import Form from "./Form";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -192,6 +193,7 @@ class App extends React.Component {
             return <Column key={column.id} column={column} tasks={tasks} />;
           })}
         </Container>
+        <Form />
       </DragDropContext>
     );
   }

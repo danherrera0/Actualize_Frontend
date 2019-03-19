@@ -36,18 +36,18 @@ export default class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="form" onSubmit={this.handleSubmit}>
         <label>
-          Make a new task:
-          <input
-            value={this.state.value}
-            onChange={this.handleChange}
-            className="inputForm"
-            type="text"
-            name="content"
-          />
+          <h3>Make a new task:</h3>
         </label>
-        <input type="submit" value="Submit" />
+        <input
+          value={this.state.value}
+          onChange={this.handleChange}
+          className="inputForm"
+          type="text"
+          name="content"
+        />
+        <input className="submit" type="submit" value="Submit" />
       </form>
     );
   }
