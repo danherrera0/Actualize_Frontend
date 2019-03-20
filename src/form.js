@@ -7,8 +7,6 @@ export default class Form extends React.Component {
     value: ""
   };
 
-  addCard = () => {};
-
   handleChange = event => {
     this.setState({
       value: event.target.value
@@ -31,7 +29,9 @@ export default class Form extends React.Component {
       })
     })
       .then(r => r.json())
-      .then(task => console.log(task));
+      .then(task => {
+        this.props.addCard(task);
+      });
   };
 
   render() {

@@ -176,6 +176,25 @@ class App extends React.Component {
     this.setState(newState);
   };
 
+  addCard = task => {
+    task.tasks_name = `task-${task.id}`;
+    task.task_id = `task-${task.id}`;
+    let taskId = task.task_id;
+    let newKey = task.tasks_name;
+    delete task.tasks_name;
+    delete task.id;
+    let column1task_ids = this.state.columns["column-1"].task_ids;
+    let newtaskIds = column1task_ids.push(taskId);
+    this.setState({
+      "column-1": {
+        id: this.state.columns["column-1"]["id"],
+        title: this.state.columns["column-1"]["title"],
+        task_ids: newtaskIds
+      },
+      tasks: { ...this.state.tasks, [`${newKey}`]: { ...task } }
+    });
+  };
+
   deleteCard = (event, card) => {
     let deletedId = parseInt(event.target.id.split("-").flat()[1]);
     fetch(`http://localhost:3000/api/v1/tasks/${deletedId}`, {
@@ -255,7 +274,7 @@ class App extends React.Component {
             );
           })}
         </Container>
-        <Form />
+        <Form addCard={this.addCard} />
       </DragDropContext>
     );
   }
