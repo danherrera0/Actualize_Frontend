@@ -96,7 +96,40 @@ class App extends React.Component {
       });
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  patchStartAfterDrop = start => {
+    let startIds = start.task_ids.map(task_id => {
+      return this.state.tasks[task_id];
+    });
+    fetch(`http://localhost:3000/api/v1/columns/${start.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: start.id,
+        title: start.title,
+        task_ids: startIds
+      })
+    });
+  };
 
+  patchFinishAfterDrop = finish => {
+    let finishIds = finish.task_ids.map(task_id => {
+      return this.state.tasks[task_id];
+    });
+    fetch(`http://localhost:3000/api/v1/columns/${finish.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: finish.id,
+        title: finish.title,
+        task_ids: finishIds
+      })
+    });
+  };
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
   onDragStart = () => {
     const homeIndex = start =>
       this.state.columnOrder.indexOf(start.source.droppableId);
@@ -130,8 +163,9 @@ class App extends React.Component {
     }
     const start = this.state.columns[source.droppableId];
     const finish = this.state.columns[destination.droppableId];
-    // console.log("start", start);
-    // console.log("finish", finish);
+    console.log(start);
+    console.log(finish);
+    console.log(draggableId);
 
     if (start === finish) {
       const newtask_ids = Array.from(start.task_ids);
@@ -176,22 +210,35 @@ class App extends React.Component {
       }
     };
     this.setState(newState);
-    //PATCH REQUESTS TO UPDATE THE BACKEND FOR ONDROP CHANGES
-    if (start.title === "To do") {
-    }
-    if (start.title === "In Progress") {
-    }
-    if (start.title === "Done") {
-    }
-    if (finish.title === "To do") {
-    }
-    if (finish.title === "In Progress") {
-    }
-    if (finish.title === "Done") {
-    }
+    this.patchStartAfterDrop(start);
+    this.patchFinishAfterDrop(finish);
+    this.updateTasks(draggableId, finish);
+  };
+
+  updateTasks = (draggableId, finish) => {
+    // let finishColumn = this.state.columns.find(column => {
+    //   return column.title === finish.title;
+    // });
+    let dragged = this.state.tasks[draggableId];
+    let draggedId = parseInt(draggableId.split("-").flat()[1]);
+
+    fetch(`http://localhost:3000/api/v1/tasks/${draggedId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: draggedId,
+        completed: dragged.completed,
+        column_id: finish.id,
+        content: dragged.content
+      })
+    });
   };
 
   //////////////////////////////////////////////////////////////////////////////////////
+
+  //PATCH REQUESTS TO UPDATE THE COLUMNS BACKEND FOR ONDROP CHANGES
 
   addCard = task => {
     task.tasks_name = `task-${task.id}`;
@@ -265,7 +312,7 @@ class App extends React.Component {
   }; //end of deleteCard fn
 
   render() {
-    console.log(this.state.tasks);
+    console.log(this.state);
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}

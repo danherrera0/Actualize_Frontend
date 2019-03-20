@@ -15,7 +15,7 @@ const Container = styled.div`
 
 export default class Task extends React.Component {
   state = {
-    percentage: 0
+    percentage: 5
   };
 
   increaseProgress = () => {
