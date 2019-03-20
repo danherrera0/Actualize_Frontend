@@ -1,37 +1,43 @@
 .nav {
-  /* background-color: #02c1e9; */
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpsSGdoPUDLTZKHhnrlSsbAELcd874SOR8175WvyxjZt8JcgIg");
+  /* background-color: white; */
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpsSGdoPUDLTZKHhnrlSsbAELcd874SOR8175WvyxjZt8JcgIg"); */
   background-size: cover;
   background-position: center;
   color: white;
-  height: 100px;
+  height: 110px;
   text-align: center;
   margin-top: 0px;
   margin-bottom: 20px;
   border-radius: 10px;
-  border-style: solid;
+  /* border-style: solid;
   border-color: #36454f;
-  border-width: medium;
+  border-width: medium; */
+  /* width: 100%; */
 }
 
 img {
-  height: 98px;
+  height: 180px;
   border-radius: 15px;
-  border-right-style: solid;
+  /* border-right-style: solid;
   border-left-style: solid;
   border-top-style: solid;
-  border-color: #36454f;
+  border-color: #36454f; */
   text-align: center;
   margin: 5px;
   border-width: medium;
 }
 
 html {
-  background-color: ;
+  /* background-color: white; */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpsSGdoPUDLTZKHhnrlSsbAELcd874SOR8175WvyxjZt8JcgIg");
+  background-size: cover;
+  background-position: center;
 }
 
 .Card {
   background-color: white;
+  font-family: "Comfortaa", cursive;
+  color: black;
   height: 20%;
   width: 80%;
   display: inline-block;
@@ -45,18 +51,23 @@ html {
 }
 
 .Container {
+  letter-spacing: 3px;
+  font-family: "Fascinate", cursive;
+  font-weight: bold;
+  font-size: 120%;
   text-align: center;
   height: 700px;
-  width: 25%;
+  width: 40%;
   float: left;
-  background-color: white;
+  background-color: #b48fefa3;
+  color: black;
   margin: 3%;
   margin-left: 5%;
   border-radius: 10px;
-  box-shadow: 6px 6px #a8a8a8;
+  box-shadow: 6px 6px #393535;
   border-style: solid;
   border-color: black;
-  border-width: thin;
+  border-width: medium;
 }
 
 .delete {

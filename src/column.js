@@ -28,11 +28,15 @@ const TaskList = styled.div`
 class Column extends React.Component {
   render() {
     return (
-      <Container className="Container">
-        <Title>{this.props.column.title}</Title>
-        <Droppable droppableId={`column-${this.props.column.id}`}>
-          {provided => (
-            <TaskList {...provided.droppableProps} ref={provided.innerRef}>
+      <Droppable droppableId={`column-${this.props.column.id}`}>
+        {provided => (
+          <TaskList
+            className="Container"
+            {...provided.droppableProps}
+            ref={provided.innerRef}
+          >
+            <Container>
+              <Title>{this.props.column.title}</Title>
               {this.props.tasks.map((task, index) => (
                 <Task
                   delete={this.props.delete}
@@ -42,10 +46,10 @@ class Column extends React.Component {
                 />
               ))}
               {provided.placeholder}
-            </TaskList>
-          )}
-        </Droppable>
-      </Container>
+            </Container>
+          </TaskList>
+        )}
+      </Droppable>
     );
   }
 }

@@ -112,6 +112,7 @@ class App extends React.Component {
       })
     });
   };
+  //this function updates the task ids in the backend for the column that lost a card
 
   patchFinishAfterDrop = finish => {
     let finishIds = finish.task_ids.map(task_id => {
@@ -129,6 +130,27 @@ class App extends React.Component {
       })
     });
   };
+  //this function updates the task ids in the backend for the column that gained a card
+
+  updateTasks = (draggableId, finish) => {
+    let dragged = this.state.tasks[draggableId];
+    let draggedId = parseInt(draggableId.split("-").flat()[1]);
+
+    fetch(`http://localhost:3000/api/v1/tasks/${draggedId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: draggedId,
+        completed: dragged.completed,
+        column_id: finish.id,
+        content: dragged.content
+      })
+    });
+  };
+  //this function updates the tasks' column_id in the backend for the card that was dragged
+
   ///////////////////////////////////////////////////////////////////////////////////////////////////
   onDragStart = () => {
     const homeIndex = start =>
@@ -213,27 +235,6 @@ class App extends React.Component {
     this.patchStartAfterDrop(start);
     this.patchFinishAfterDrop(finish);
     this.updateTasks(draggableId, finish);
-  };
-
-  updateTasks = (draggableId, finish) => {
-    // let finishColumn = this.state.columns.find(column => {
-    //   return column.title === finish.title;
-    // });
-    let dragged = this.state.tasks[draggableId];
-    let draggedId = parseInt(draggableId.split("-").flat()[1]);
-
-    fetch(`http://localhost:3000/api/v1/tasks/${draggedId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        id: draggedId,
-        completed: dragged.completed,
-        column_id: finish.id,
-        content: dragged.content
-      })
-    });
   };
 
   //////////////////////////////////////////////////////////////////////////////////////
