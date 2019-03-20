@@ -130,6 +130,7 @@ class App extends React.Component {
     }
     const start = this.state.columns[source.droppableId];
     const finish = this.state.columns[destination.droppableId];
+
     if (start === finish) {
       const newtask_ids = Array.from(start.task_ids);
       newtask_ids.splice(source.index, 1); //from this index we want to remove one item - the dragged item
@@ -149,18 +150,21 @@ class App extends React.Component {
       this.setState(newState);
       return;
     }
+
     const starttask_ids = Array.from(start.task_ids);
     starttask_ids.splice(source.index, 1);
     const newStart = {
       ...start,
       task_ids: starttask_ids
     };
+
     const finishtask_ids = Array.from(finish.task_ids);
     finishtask_ids.splice(destination.index, 0, draggableId);
     const newFinish = {
       ...finish,
       task_ids: finishtask_ids
     };
+
     const newState = {
       ...this.state,
       columns: {
@@ -174,10 +178,9 @@ class App extends React.Component {
 
   deleteCard = (event, card) => {
     let deletedId = parseInt(event.target.id.split("-").flat()[1]);
-    // fetch(`http://localhost:3000/api/v1/tasks/${deletedId}`, {
-    //   method: "DELETE"
-    // });
-    // console.log(card.task_id);
+    fetch(`http://localhost:3000/api/v1/tasks/${deletedId}`, {
+      method: "DELETE"
+    });
     let column1task_ids = this.state.columns["column-1"].task_ids;
     let column2task_ids = this.state.columns["column-2"].task_ids;
     let column3task_ids = this.state.columns["column-3"].task_ids;
@@ -187,30 +190,46 @@ class App extends React.Component {
         card.task_id
       );
       column1task_ids.splice(deletedIndex, 1);
-      console.log(column1task_ids);
-      //set state here
+      this.setState({
+        "column-1": {
+          id: this.state.columns["column-1"]["id"],
+          title: this.state.columns["column-1"]["title"],
+          task_ids: column1task_ids
+        }
+      });
     }
     if (column2task_ids.includes(card.task_id)) {
       let deletedIndex = this.state.columns["column-2"].task_ids.indexOf(
         card.task_id
       );
       column2task_ids.splice(deletedIndex, 1);
-      console.log(column2task_ids);
-      //set state here
+      this.setState({
+        "column-2": {
+          id: this.state.columns["column-2"]["id"],
+          title: this.state.columns["column-2"]["title"],
+          task_ids: column2task_ids
+        }
+      });
     }
     if (column3task_ids.includes(card.task_id)) {
       let deletedIndex = this.state.columns["column-3"].task_ids.indexOf(
         card.task_id
       );
       column3task_ids.splice(deletedIndex, 1);
-      console.log(column3task_ids);
-      //set state here
+      this.setState({
+        "column-3": {
+          id: this.state.columns["column-3"]["id"],
+          title: this.state.columns["column-3"]["title"],
+          task_ids: column3task_ids
+        }
+      });
     } else {
       return;
     }
-  };
+  }; //end of deleteCard fn
 
   render() {
+    console.log(this.state.tasks);
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}
