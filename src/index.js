@@ -178,22 +178,16 @@ class App extends React.Component {
     this.setState(newState);
     //PATCH REQUESTS TO UPDATE THE BACKEND FOR ONDROP CHANGES
     if (start.title === "To do") {
-      console.log(start.id);
     }
     if (start.title === "In Progress") {
-      console.log(start.id);
     }
     if (start.title === "Done") {
-      console.log(start.id);
     }
     if (finish.title === "To do") {
-      console.log(finish.id);
     }
     if (finish.title === "In Progress") {
-      console.log(finish.id);
     }
     if (finish.title === "Done") {
-      console.log(finish.id);
     }
   };
 

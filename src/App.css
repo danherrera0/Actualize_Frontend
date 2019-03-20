@@ -1,5 +1,8 @@
 .nav {
-  background-color: #02c1e9;
+  /* background-color: #02c1e9; */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpsSGdoPUDLTZKHhnrlSsbAELcd874SOR8175WvyxjZt8JcgIg");
+  background-size: cover;
+  background-position: center;
   color: white;
   height: 100px;
   text-align: center;
