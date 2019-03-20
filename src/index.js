@@ -193,7 +193,7 @@ class App extends React.Component {
       },
       tasks: { ...this.state.tasks, [`${newKey}`]: { ...task } }
     });
-  };
+  }; //end of addCard function
 
   deleteCard = (event, card) => {
     let deletedId = parseInt(event.target.id.split("-").flat()[1]);

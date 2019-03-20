@@ -32,6 +32,7 @@ export default class Form extends React.Component {
       .then(task => {
         this.props.addCard(task);
       });
+    this.setState({ value: "" });
   };
 
   render() {
