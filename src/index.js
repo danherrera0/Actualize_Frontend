@@ -55,7 +55,6 @@ class App extends React.Component {
         let myColumns = apiColumns.reduce((final, elem) => {
           return Object.assign(final, elem);
         }, {});
-        // console.log(myColumns);
 
         let col1 = myColumns["column-1"].task_ids;
         let col2 = myColumns["column-2"].task_ids;
@@ -131,6 +130,8 @@ class App extends React.Component {
     }
     const start = this.state.columns[source.droppableId];
     const finish = this.state.columns[destination.droppableId];
+    // console.log("start", start);
+    // console.log("finish", finish);
 
     if (start === finish) {
       const newtask_ids = Array.from(start.task_ids);
@@ -175,7 +176,28 @@ class App extends React.Component {
       }
     };
     this.setState(newState);
+    //PATCH REQUESTS TO UPDATE THE BACKEND FOR ONDROP CHANGES
+    if (start.title === "To do") {
+      console.log(start.id);
+    }
+    if (start.title === "In Progress") {
+      console.log(start.id);
+    }
+    if (start.title === "Done") {
+      console.log(start.id);
+    }
+    if (finish.title === "To do") {
+      console.log(finish.id);
+    }
+    if (finish.title === "In Progress") {
+      console.log(finish.id);
+    }
+    if (finish.title === "Done") {
+      console.log(finish.id);
+    }
   };
+
+  //////////////////////////////////////////////////////////////////////////////////////
 
   addCard = task => {
     task.tasks_name = `task-${task.id}`;
