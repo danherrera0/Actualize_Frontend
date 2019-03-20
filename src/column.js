@@ -4,13 +4,13 @@ import styled from "styled-components";
 import { Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div`
-  margin: 15px;
+  /* margin: 15px;
   padding: 1%;
   border: 1px solid lightgrey;
   border-radius: 2px;
   width: 220px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; */
 `;
 
 const Title = styled.h3`

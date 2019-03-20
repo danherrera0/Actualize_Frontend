@@ -1,6 +1,8 @@
 import React from "react";
+import "./App.css";
 import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
+import Progressbar from "./Progressbar";
 
 const Container = styled.div`
   /* border: 1px solid lightgrey;
@@ -11,6 +13,16 @@ const Container = styled.div`
 `;
 
 export default class Task extends React.Component {
+  state = {
+    percentage: 20
+  };
+
+  progressClick = () => {
+    this.setState({
+      percentage: this.state.percentage + 10
+    });
+  };
+
   render() {
     return (
       <Draggable draggableId={this.props.task.task_id} index={this.props.index}>
@@ -22,16 +34,18 @@ export default class Task extends React.Component {
             {...provided.dragHandleProps}
             // isDragging={snapshot.isDragging}
           >
-            <span>
-              <button
-                onClick={event => this.props.delete(event, this.props.task)}
-                id={this.props.task.task_id}
-                className="delete"
-              >
-                X
-              </button>
-            </span>
+            <button
+              onClick={event => this.props.delete(event, this.props.task)}
+              id={this.props.task.task_id}
+              className="delete"
+            >
+              X
+            </button>
             <p className="text">{this.props.task.content}</p>
+            <Progressbar
+              click={this.progressClick}
+              percentage={this.state.percentage}
+            />
           </Container>
         )}
       </Draggable>

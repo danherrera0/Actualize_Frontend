@@ -87,3 +87,19 @@ html {
   border-style: inset;
   border-color: black;
 }
+
+.progress-bar {
+  margin: 1%;
+  position: relative;
+  height: 10px;
+  width: 250px;
+  border-radius: 50px;
+  border: 1px solid #333;
+}
+
+.filler {
+  background: green;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.2s ease-in;
+}

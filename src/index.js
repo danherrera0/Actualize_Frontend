@@ -5,6 +5,7 @@ import Column from "./column";
 import NavBar from "./NavBar";
 import Form from "./Form";
 import styled from "styled-components";
+import "./App.css";
 
 const Container = styled.div`
   display: flex;
