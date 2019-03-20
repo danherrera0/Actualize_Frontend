@@ -8,6 +8,7 @@
     "react-beautiful-dnd": "^10.0.4",
     "react-dom": "^16.8.4",
     "react-scripts": "2.1.8",
+    "react-sweet-progress": "^1.1.2",
     "styled-components": "^4.1.3"
   },
   "scripts": {

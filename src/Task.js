@@ -3,6 +3,7 @@ import "./App.css";
 import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
 import Progressbar from "./Progressbar";
+import "react-sweet-progress/lib/style.css";
 
 const Container = styled.div`
   /* border: 1px solid lightgrey;
@@ -14,12 +15,18 @@ const Container = styled.div`
 
 export default class Task extends React.Component {
   state = {
-    percentage: 20
+    percentage: 0
   };
 
-  progressClick = () => {
+  increaseProgress = () => {
     this.setState({
       percentage: this.state.percentage + 10
+    });
+  };
+
+  decreaseProgress = () => {
+    this.setState({
+      percentage: this.state.percentage - 10
     });
   };
 
@@ -41,11 +48,15 @@ export default class Task extends React.Component {
             >
               X
             </button>
+            <Progressbar percentage={this.state.percentage} />
+            <span>
+              <button onClick={() => this.decreaseProgress()}> - </button>
+            </span>
+            <span>
+              <button onClick={() => this.increaseProgress()}>+ </button>
+            </span>
+
             <p className="text">{this.props.task.content}</p>
-            <Progressbar
-              click={this.progressClick}
-              percentage={this.state.percentage}
-            />
           </Container>
         )}
       </Draggable>
