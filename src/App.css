@@ -28,15 +28,9 @@ html {
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 59%;
-  /* height: 80px;
-  width: 80%;
-  display: inline-block;
-  border-style: solid;
-  border-color: black;
-  border-width: thin;
-  /* border-radius: 10px; */
-  /* margin: 1%; */
-  box-shadow: 4px 4px #09090966;
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  margin: 0.5em;
+  float: left;
   padding: 1%;
   text-align: left;
   display: inline-block;
@@ -55,16 +49,14 @@ html {
   font-size: 35px;
   text-align: center;
   height: 600px;
-  width: 550px;
+  width: 420px;
   float: left;
   background-color: rgba(254, 224, 48, 0.61);
   color: black;
   margin-left: 1%;
+  margin-top: 0.5em;
   border-radius: 10px;
-  box-shadow: 6px 6px #393535;
-  border-style: solid;
-  border-color: black;
-  border-width: medium;
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   overflow: scroll;
 }
 
@@ -109,12 +101,14 @@ html {
 }
 
 .showform {
-  margin-left: 5%;
+  /* THIS IS FOR THE ADD TASK BUTTON */
+  margin-left: 1%;
   margin-top: 0%;
   height: 50px;
   width: 100px;
-  border-style: double;
-  border-color: black;
+  opacity: 0.6px;
+  /* border-style: double;
+  border-color: black; */
   background-color: #fee030;
   border-radius: 15px;
   font-size: 90%;
@@ -185,9 +179,6 @@ html {
 
 li {
   list-style: none;
-  margin: 1em;
-  float: left;
-  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
 }
 
 * {
