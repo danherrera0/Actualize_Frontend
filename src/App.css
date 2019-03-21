@@ -28,32 +28,38 @@ html {
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 59%;
-  height: 80px;
+  /* height: 80px;
   width: 80%;
   display: inline-block;
   border-style: solid;
   border-color: black;
   border-width: thin;
-  margin: 1%;
+  /* border-radius: 10px; */
+  /* margin: 1%; */
   box-shadow: 4px 4px #09090966;
-  border-radius: 10px;
   padding: 1%;
   text-align: left;
+  display: inline-block;
+  float: left;
+  height: 8em;
+  width: 8em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .Container {
+  padding: 0.7em;
   font-family: "Limelight";
   font-weight: bold;
   letter-spacing: 1px;
   font-size: 35px;
   text-align: center;
   height: 600px;
-  width: 40%;
+  width: 550px;
   float: left;
   background-color: rgba(254, 224, 48, 0.61);
   color: black;
-  margin: 2%;
-  margin-left: 5%;
+  margin-left: 1%;
   border-radius: 10px;
   box-shadow: 6px 6px #393535;
   border-style: solid;
@@ -78,6 +84,7 @@ html {
 .add {
   display: inline-block;
   float: left;
+  width: 20px;
   border-radius: 5px;
   background-color: #8bc34a;
   font-weight: bold;
@@ -85,6 +92,7 @@ html {
 }
 
 .subtract {
+  width: 20px;
   display: inline-block;
   float: left;
   font-weight: bold;
@@ -140,7 +148,7 @@ html {
   float: right;
   position: relative;
   height: 10px;
-  width: 210px;
+  width: 100px;
   border-radius: 50px;
   border: 1px solid #333;
 }
@@ -173,4 +181,16 @@ html {
 .wiggle:hover {
   animation: wiggle 1s ease;
   animation-iteration-count: 1;
+}
+
+li {
+  list-style: none;
+  margin: 1em;
+  float: left;
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
