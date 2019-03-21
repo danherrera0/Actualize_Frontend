@@ -316,6 +316,42 @@ class App extends React.Component {
       showform: !this.state.showform
     });
   };
+
+  forCharts = () => {
+    let tasksLength =
+      this.state.col1Tasks.length +
+      this.state.col2Tasks.length +
+      this.state.col3Tasks.length;
+
+    let allTasks = [];
+
+    allTasks.push(this.state.col1Tasks);
+    allTasks.push(this.state.col2Tasks);
+    allTasks.push(this.state.col3Tasks);
+
+    let flatTasks = allTasks.flat();
+    let truTasks = [];
+    if (this.state.tasks) {
+      let completed = flatTasks.map(task => {
+        return this.state.tasks[task];
+      });
+
+      let completedTasks = completed.filter(task => {
+        if (task.completed === true) {
+          return truTasks.push(task);
+        }
+      });
+    }
+    let numberOfCompletedTasks = 0;
+
+    if (truTasks.length > 0) {
+      numberOfCompletedTasks = truTasks.length;
+    }
+    // console.log(truTasks);
+    // console.log(this.state.tasks["task-78"]);
+    // console.log(tasksLength);
+  };
+
   render() {
     return (
       <DragDropContext
