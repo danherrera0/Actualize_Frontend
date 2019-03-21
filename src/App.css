@@ -1,25 +1,18 @@
 .nav {
-  /* background-color: white; */
-  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpsSGdoPUDLTZKHhnrlSsbAELcd874SOR8175WvyxjZt8JcgIg"); */
-  background-size: cover;
-  background-position: center;
-  color: white;
-  height: 110px;
+  height: 100px;
+  width: 25%;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 1%;
   margin-bottom: 20px;
+  margin-left: 40%;
+  margin-right: 60%;
   border-radius: 10px;
-  /* border-style: solid;
-  border-color: #36454f;
-  border-width: medium; */
-  /* width: 100%; */
 }
 
 img {
   height: 180px;
   border-radius: 15px;
-  text-align: center;
-  margin: 5px;
+  /* text-align: center; */
   border-width: medium;
 }
 
@@ -31,7 +24,7 @@ html {
 }
 
 .Card {
-  background-color: white;
+  background-color: #f8f8f8;
   font-family: "Comfortaa", cursive;
   color: black;
   height: 20%;
@@ -43,6 +36,7 @@ html {
   margin: 2%;
   box-shadow: 4px 4px #09090966;
   align-content: center;
+  border-radius: 10px;
   padding: 2%;
 }
 
@@ -78,6 +72,7 @@ html {
 
 .form {
   margin-left: 5%;
+  margin-top: 0%;
 }
 
 .inputForm {
@@ -112,4 +107,27 @@ html {
   height: 100%;
   border-radius: inherit;
   transition: width 0.2s ease-in;
+}
+
+@keyframes wiggle {
+  20% {
+    transform: translateX(4px);
+  }
+  40% {
+    transform: translateX(-4px);
+  }
+  60% {
+    transform: translateX(2px);
+  }
+  80% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.wiggle:hover {
+  animation: wiggle 1s ease;
+  animation-iteration-count: 1;
 }
