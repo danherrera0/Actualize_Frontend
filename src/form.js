@@ -40,7 +40,7 @@ export default class Form extends React.Component {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <label>
-          <h3>Make a new task:</h3>
+          <h3>Enter task below:</h3>
         </label>
         <input
           value={this.state.value}

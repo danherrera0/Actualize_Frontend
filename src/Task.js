@@ -44,12 +44,18 @@ export default class Task extends React.Component {
             </button>
             <Progressbar percentage={this.state.percentage} />
             <span>
-              <button onClick={() => this.decreaseProgress()}> - </button>
+              <button
+                className="subtract"
+                onClick={() => this.decreaseProgress()}
+              >
+                -
+              </button>
             </span>
             <span>
-              <button onClick={() => this.increaseProgress()}>+ </button>
+              <button className="add" onClick={() => this.increaseProgress()}>
+                +
+              </button>
             </span>
-
             <p className="text">{this.props.task.content}</p>
           </Container>
         )}

@@ -35,7 +35,8 @@ class App extends React.Component {
     columnOrder: ["column-1", "column-2", "column-3"],
     col1Tasks: [],
     col2Tasks: [],
-    col3Tasks: []
+    col3Tasks: [],
+    showform: false
   };
 
   componentDidMount() {
@@ -311,6 +312,11 @@ class App extends React.Component {
     }
   }; //end of deleteCard fn
 
+  showform = () => {
+    this.setState({
+      showform: !this.state.showform
+    });
+  };
   render() {
     console.log(this.state);
     return (
@@ -320,6 +326,10 @@ class App extends React.Component {
         onDragUpdate={this.onDragUpdate}
       >
         <NavBar />
+        <button className="showform" onClick={() => this.showform()}>
+          <h3>Add Task!</h3>
+        </button>
+        {this.state.showform ? <Form addCard={this.addCard} /> : null}
         <Container>
           {this.state.columnOrder.map((columnId, index) => {
             const column = this.state.columns[columnId];
@@ -338,7 +348,6 @@ class App extends React.Component {
             );
           })}
         </Container>
-        <Form addCard={this.addCard} />
       </DragDropContext>
     );
   }
