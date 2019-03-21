@@ -141,7 +141,7 @@ class App extends React.Component {
     } else if (finish.id === 1 || finish.id === 2) {
       dragged.completed = false;
     }
-    console.log(dragged.completed);
+    console.log(dragged);
     fetch(`http://localhost:3000/api/v1/tasks/${draggedId}`, {
       method: "PATCH",
       headers: {
@@ -151,7 +151,8 @@ class App extends React.Component {
         id: draggedId,
         completed: dragged.completed,
         column_id: finish.id,
-        content: dragged.content
+        content: dragged.content,
+        percentage: dragged.percentage
       })
     });
   };

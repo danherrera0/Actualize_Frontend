@@ -35,7 +35,8 @@ html {
   text-align: left;
   display: inline-block;
   float: left;
-  height: 8em;
+  min-height: 8em;
+  max-height: 8em;
   width: 8em;
   padding-left: 0.5em;
   padding-right: 0.5em;

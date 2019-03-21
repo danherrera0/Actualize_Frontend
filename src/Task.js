@@ -9,19 +9,45 @@ const Container = styled.div``;
 
 export default class Task extends React.Component {
   state = {
-    percentage: 5
+    percentage: this.props.task.percentage
   };
 
-  increaseProgress = () => {
-    this.setState({
-      percentage: this.state.percentage + 10
+  updateProgress = card => {
+    let cardId = parseInt(card.task_id.split("-").flat()[1]);
+    fetch(`http://localhost:3000/api/v1/tasks/${cardId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        percentage: this.state.percentage
+      })
     });
   };
 
-  decreaseProgress = () => {
-    this.setState({
-      percentage: this.state.percentage - 10
-    });
+  increaseProgress = card => {
+    this.setState(
+      {
+        percentage: this.state.percentage + 5
+      },
+      () => {
+        console.log(this.state.percentage);
+        this.updateProgress(card);
+      }
+    );
+  };
+
+  decreaseProgress = card => {
+    this.setState(
+      {
+        percentage: this.state.percentage - 5
+      },
+      () => {
+        console.log(this.state.percentage);
+        this.updateProgress(card);
+      }
+    );
   };
 
   render() {
@@ -46,13 +72,16 @@ export default class Task extends React.Component {
             <span>
               <button
                 className="subtract"
-                onClick={() => this.decreaseProgress()}
+                onClick={() => this.decreaseProgress(this.props.task)}
               >
                 -
               </button>
             </span>
             <span>
-              <button className="add" onClick={() => this.increaseProgress()}>
+              <button
+                className="add"
+                onClick={() => this.increaseProgress(this.props.task)}
+              >
                 +
               </button>
             </span>
@@ -60,7 +89,10 @@ export default class Task extends React.Component {
               className="text"
               style={
                 this.props.task.completed
-                  ? { textDecoration: "line-through" }
+                  ? {
+                      textDecoration: "line-through",
+                      color: "#585858"
+                    }
                   : { textDecoration: "none" }
               }
             >

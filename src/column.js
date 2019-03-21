@@ -25,14 +25,12 @@ class Column extends React.Component {
             <Container>
               <Title>{this.props.column.title}</Title>
               {this.props.tasks.map((task, index) => (
-                <li>
-                  <Task
-                    delete={this.props.delete}
-                    key={task.task_id}
-                    task={task}
-                    index={index}
-                  />
-                </li>
+                <Task
+                  delete={this.props.delete}
+                  key={task.task_id}
+                  task={task}
+                  index={index}
+                />
               ))}
               {provided.placeholder}
             </Container>
