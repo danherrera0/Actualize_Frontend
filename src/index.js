@@ -141,7 +141,6 @@ class App extends React.Component {
     } else if (finish.id === 1 || finish.id === 2) {
       dragged.completed = false;
     }
-    console.log(dragged);
     fetch(`http://localhost:3000/api/v1/tasks/${draggedId}`, {
       method: "PATCH",
       headers: {
@@ -167,12 +166,9 @@ class App extends React.Component {
     });
   };
 
-  onDragUpdate = update => {
-    const { destination } = update;
-    const opacity = destination
-      ? destination.index / Object.keys(this.state.tasks).length
-      : 0;
-  };
+  // onDragUpdate = update => {
+  //   const { destination } = update;
+  // };
 
   onDragEnd = result => {
     this.setState({
@@ -321,7 +317,6 @@ class App extends React.Component {
     });
   };
   render() {
-    console.log(this.state);
     return (
       <DragDropContext
         onDragEnd={this.onDragEnd}

@@ -13,6 +13,14 @@ export default class Task extends React.Component {
   };
 
   updateProgress = card => {
+    let currentPercentage = 0;
+    if (this.state.percentage < 0) {
+      currentPercentage = 0;
+    } else if (this.state.percentage > 100) {
+      currentPercentage = 100;
+    } else {
+      currentPercentage = this.state.percentage;
+    }
     let cardId = parseInt(card.task_id.split("-").flat()[1]);
     fetch(`http://localhost:3000/api/v1/tasks/${cardId}`, {
       method: "PATCH",
@@ -21,30 +29,44 @@ export default class Task extends React.Component {
         Accept: "application/json"
       },
       body: JSON.stringify({
-        percentage: this.state.percentage
+        percentage: currentPercentage
       })
     });
   };
 
   increaseProgress = card => {
+    let newPercentage = this.state.percentage;
+    if (this.state.percentage < 0) {
+      newPercentage = 0;
+    } else if (this.state.percentage > 100) {
+      newPercentage = 100;
+    } else {
+      newPercentage = this.state.percentage + 5;
+    }
     this.setState(
       {
-        percentage: this.state.percentage + 5
+        percentage: newPercentage
       },
       () => {
-        console.log(this.state.percentage);
         this.updateProgress(card);
       }
     );
   };
 
   decreaseProgress = card => {
+    let newPercentage = this.state.percentage;
+    if (this.state.percentage < 0) {
+      newPercentage = 0;
+    } else if (this.state.percentage > 100) {
+      newPercentage = 100;
+    } else {
+      newPercentage = this.state.percentage - 5;
+    }
     this.setState(
       {
-        percentage: this.state.percentage - 5
+        percentage: newPercentage
       },
       () => {
-        console.log(this.state.percentage);
         this.updateProgress(card);
       }
     );
