@@ -136,7 +136,12 @@ class App extends React.Component {
   updateTasks = (draggableId, finish) => {
     let dragged = this.state.tasks[draggableId];
     let draggedId = parseInt(draggableId.split("-").flat()[1]);
-
+    if (finish.id === 3) {
+      dragged.completed = true;
+    } else if (finish.id === 1 || finish.id === 2) {
+      dragged.completed = false;
+    }
+    console.log(dragged.completed);
     fetch(`http://localhost:3000/api/v1/tasks/${draggedId}`, {
       method: "PATCH",
       headers: {
@@ -185,9 +190,6 @@ class App extends React.Component {
     }
     const start = this.state.columns[source.droppableId];
     const finish = this.state.columns[destination.droppableId];
-    console.log(start);
-    console.log(finish);
-    console.log(draggableId);
 
     if (start === finish) {
       const newtask_ids = Array.from(start.task_ids);

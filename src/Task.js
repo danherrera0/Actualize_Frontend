@@ -56,7 +56,16 @@ export default class Task extends React.Component {
                 +
               </button>
             </span>
-            <p className="text">{this.props.task.content}</p>
+            <p
+              className="text"
+              style={
+                this.props.task.completed
+                  ? { textDecoration: "line-through" }
+                  : { textDecoration: "none" }
+              }
+            >
+              {this.props.task.content}
+            </p>
           </Container>
         )}
       </Draggable>
