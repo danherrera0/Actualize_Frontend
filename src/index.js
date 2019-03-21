@@ -165,7 +165,6 @@ class App extends React.Component {
     const opacity = destination
       ? destination.index / Object.keys(this.state.tasks).length
       : 0;
-    document.body.style.backgroundColor = `rgba(153, 141, 217, ${opacity})`;
   };
 
   onDragEnd = result => {

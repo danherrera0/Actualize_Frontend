@@ -18,18 +18,14 @@
 img {
   height: 180px;
   border-radius: 15px;
-  /* border-right-style: solid;
-  border-left-style: solid;
-  border-top-style: solid;
-  border-color: #36454f; */
   text-align: center;
   margin: 5px;
   border-width: medium;
 }
 
 html {
-  /* background-color: white; */
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpsSGdoPUDLTZKHhnrlSsbAELcd874SOR8175WvyxjZt8JcgIg");
+  /* background-color: #0400ff30; */
+  background-image: url("http://www.hdwallpaperslife.com/wp-content/uploads/2018/08/colorful_gradient_waves_honor_play_stock.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -54,12 +50,12 @@ html {
   letter-spacing: 3px;
   font-family: "Fascinate", cursive;
   font-weight: bold;
-  font-size: 120%;
+  font-size: 170%;
   text-align: center;
   height: 700px;
   width: 40%;
   float: left;
-  background-color: #b48fefa3;
+  background-color: rgba(254, 224, 48, 0.61);
   color: black;
   margin: 3%;
   margin-left: 5%;

@@ -5,13 +5,7 @@ import { Draggable } from "react-beautiful-dnd";
 import Progressbar from "./Progressbar";
 import "react-sweet-progress/lib/style.css";
 
-const Container = styled.div`
-  /* border: 1px solid lightgrey;
-  padding: 8px;
-  border-radius: 2px;
-  margin-bottom: 8px; */
-  /* background-color: ${props => (props.isDragging ? "white" : "white")}; */
-`;
+const Container = styled.div``;
 
 export default class Task extends React.Component {
   state = {
