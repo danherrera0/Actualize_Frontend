@@ -23,27 +23,30 @@ html {
 
 .Card {
   background-color: #f8f8f8;
-  font-family: "Comfortaa", cursive;
-  font-size: 50%;
   color: black;
+  font-family: "Comfortaa", cursive;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 59%;
   height: 80px;
   width: 80%;
   display: inline-block;
   border-style: solid;
   border-color: black;
   border-width: thin;
-  margin: 2%;
+  margin: 1%;
   box-shadow: 4px 4px #09090966;
   border-radius: 10px;
-  padding: 2%;
+  padding: 1%;
   text-align: left;
 }
 
 .Container {
-  letter-spacing: 3px;
-  font-family: "Fascinate", cursive;
+  font-family: "Limelight";
+  /* font-family: "Montserrat", sans-serif; */
   font-weight: bold;
-  font-size: 170%;
+  letter-spacing: 1px;
+  font-size: 35px;
   text-align: center;
   height: 600px;
   width: 40%;
@@ -57,6 +60,7 @@ html {
   border-style: solid;
   border-color: black;
   border-width: medium;
+  overflow: scroll;
 }
 
 .text {
