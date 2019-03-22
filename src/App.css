@@ -1,25 +1,22 @@
 .nav {
-  height: 7em;
+  height: 5.5em;
   max-width: 100%;
   padding-top: 0em;
   font-family: "Playfair Display", serif;
-  margin: 1%;
   background-color: #f5f5f5;
-  border-radius: 5px;
-  background-color: #e6e9ea;
-  /* -webkit-box-shadow: 3px 3px 5px rgba(33, 33, 33, 0.7); */
+  background-color: #f5f5f5;
+  -webkit-box-shadow: 3px 3px 5px rgba(33, 33, 33, 0.7);
 }
 
 img {
   padding-left: 0px;
   height: 80px;
+  width: 16em;
   margin: 0%;
 }
 
 html {
-  /* background-color: #f5f5f5; */
-  background-color: #e6e9ea;
-
+  background-color: #f5f5f5;
   max-height: 100%;
   max-width: 100%;
 }
@@ -37,8 +34,8 @@ html {
   text-align: left;
   display: inline-block;
   float: left;
-  min-height: 5em;
-  max-height: 5em;
+  min-height: 8em;
+  max-height: 8em;
   width: 89%;
   padding-left: 0.5em;
   padding-right: 0.5em;
@@ -47,19 +44,15 @@ html {
 
 .Container {
   padding: 0.4em;
-  /* font-family: "Playfair Display", serif; */
-  font-family: "Brown" Bold, sans-serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: bold;
-  letter-spacing: 1px;
-  font-size: 35px;
+  font-size: 30px;
   text-align: center;
   height: 600px;
   width: 23%;
   float: left;
-  background-color: #f5f5f5;
-
+  background-color: #e6e9ea;
   opacity: 0.9;
-  /* background-color: rgba(254, 224, 48, 0.61); */
   color: black;
   margin-left: 1%;
   margin-top: 0.5em;
@@ -104,10 +97,11 @@ html {
 }
 
 .form {
-  height: 100px;
-  width: 40%;
-  margin-left: 5%;
-  margin-top: 0%;
+  height: 80px;
+  width: 60%;
+  margin-left: 1%;
+  margin-top: 2%;
+  font-family: "Comfortaa", cursive;
 }
 
 .showform {
@@ -130,9 +124,10 @@ html {
 }
 
 .inputForm {
+  font-family: "Comfortaa", cursive;
   margin-right: 1%;
   width: 40%;
-  height: 50px;
+  height: 40px;
   border-style: solid;
   border-color: grey;
   border-width: thin;
@@ -143,14 +138,15 @@ html {
 .submit {
   margin-left: 0%;
   margin-top: 0%;
-  height: 53px;
-  width: 100px;
+  height: 2em;
+  width: 70px;
   border-style: double;
   border-color: black;
-  background-color: black;
-  color: white;
+  background-color: #757575c2;
+  color: black;
   border-radius: 5px;
   font-size: 100%;
+  font-family: "Comfortaa", cursive;
 }
 
 .progress-bar {
