@@ -4,8 +4,6 @@ import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./column";
 import NavBar from "./NavBar";
 import Form from "./Form";
-import * as V from "victory";
-import MYChart from "./Chart";
 import styled from "styled-components";
 import "./App.css";
 
@@ -349,7 +347,6 @@ class App extends React.Component {
             );
           })}
         </Container>
-        <MYChart state={this.state} />
       </DragDropContext>
     );
   }

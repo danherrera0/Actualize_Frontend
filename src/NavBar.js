@@ -1,11 +1,11 @@
 import React from "react";
-import logo from "./logo.png";
+import logo from "./Actualize.png";
 import "./App.css";
 
 function Navbar() {
   return (
     <div className="nav">
-      <img className="logo" alt="logo" src={logo} />
+      <img src={logo} />
     </div>
   );
 }
