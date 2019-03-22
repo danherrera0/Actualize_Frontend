@@ -4,12 +4,12 @@ import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./column";
 import NavBar from "./NavBar";
 import Form from "./Form";
+import * as V from "victory";
+import MYChart from "./Chart";
 import styled from "styled-components";
 import "./App.css";
 
-const Container = styled.div`
-  display: flex;
-`;
+const Container = styled.div``;
 
 class App extends React.Component {
   state = {
@@ -317,41 +317,6 @@ class App extends React.Component {
     });
   };
 
-  forCharts = () => {
-    let tasksLength =
-      this.state.col1Tasks.length +
-      this.state.col2Tasks.length +
-      this.state.col3Tasks.length;
-
-    let allTasks = [];
-
-    allTasks.push(this.state.col1Tasks);
-    allTasks.push(this.state.col2Tasks);
-    allTasks.push(this.state.col3Tasks);
-
-    let flatTasks = allTasks.flat();
-    let truTasks = [];
-    if (this.state.tasks) {
-      let completed = flatTasks.map(task => {
-        return this.state.tasks[task];
-      });
-
-      let completedTasks = completed.filter(task => {
-        if (task.completed === true) {
-          return truTasks.push(task);
-        }
-      });
-    }
-    let numberOfCompletedTasks = 0;
-
-    if (truTasks.length > 0) {
-      numberOfCompletedTasks = truTasks.length;
-    }
-    // console.log(truTasks);
-    // console.log(this.state.tasks["task-78"]);
-    // console.log(tasksLength);
-  };
-
   render() {
     return (
       <DragDropContext
@@ -363,7 +328,9 @@ class App extends React.Component {
         <button className="showform" onClick={() => this.showform()}>
           <h3>Add Task!</h3>
         </button>
-        {this.state.showform ? <Form addCard={this.addCard} /> : null}
+        {this.state.showform ? (
+          <Form showform={this.showform} addCard={this.addCard} />
+        ) : null}
         <Container>
           {this.state.columnOrder.map((columnId, index) => {
             const column = this.state.columns[columnId];
@@ -382,6 +349,7 @@ class App extends React.Component {
             );
           })}
         </Container>
+        <MYChart state={this.state} />
       </DragDropContext>
     );
   }

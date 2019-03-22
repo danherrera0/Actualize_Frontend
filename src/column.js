@@ -5,9 +5,7 @@ import { Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div``;
 
-const Title = styled.h3`
-  padding: 8px;
-`;
+const Title = styled.h3``;
 
 const TaskList = styled.div``;
 

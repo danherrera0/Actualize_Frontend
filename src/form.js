@@ -34,6 +34,7 @@ export default class Form extends React.Component {
         this.props.addCard(task);
       });
     this.setState({ value: "" });
+    this.props.showform();
   };
 
   render() {
