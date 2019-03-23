@@ -330,7 +330,7 @@ class App extends React.Component {
         {this.state.showform ? (
           <Form showform={this.showform} addCard={this.addCard} />
         ) : null}
-        <Sidebar />
+        <Sidebar showform={this.showform} addCard={this.addCard} />
         <Container>
           {this.state.columnOrder.map((columnId, index) => {
             const column = this.state.columns[columnId];

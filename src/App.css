@@ -57,9 +57,10 @@ html {
   float: left;
   min-height: 6em;
   max-height: 6em;
-  width: 90%;
+  width: 25%;
+  /* width: 90%; */
   padding: 2%;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .Container {
@@ -68,8 +69,10 @@ html {
   font-weight: bold;
   font-size: 30px;
   text-align: center;
-  height: 600px;
-  width: 19%;
+  width: 700px;
+  height: 200px;
+  /* height: 600px; */
+  /* width: 19%; */
   float: left;
   background-color: #e6e9ea;
   color: black;
@@ -87,7 +90,7 @@ html {
 
 .delete {
   position: relative;
-  float: right;
+  float: left;
   border-style: none;
   font-weight: bold;
   font-size: 90%;
@@ -96,7 +99,7 @@ html {
 .add {
   margin: 0.5%;
   display: inline-block;
-  float: left;
+  float: right;
   width: 20px;
   border-radius: 5px;
   background-color: #bfc2cd;
@@ -108,7 +111,7 @@ html {
   width: 20px;
   margin: 0.5%;
   display: inline-block;
-  float: left;
+  float: right;
   font-weight: bold;
   border-radius: 5px;
   background-color: #bfc2cd;

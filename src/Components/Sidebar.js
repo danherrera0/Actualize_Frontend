@@ -1,10 +1,13 @@
 import React from "react";
 import "../App.css";
+import Form from "./Form";
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <h1>sidebar</h1>
+      <button className="showform" onClick={() => this.showform()}>
+        <h3>Add Task!</h3>
+      </button>
     </div>
   );
 }
