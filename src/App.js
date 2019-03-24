@@ -5,6 +5,7 @@ import Column from "./Components/column";
 import NavBar from "./Components/NavBar";
 import Form from "./Components/Form";
 import Sidebar from "./Components/Sidebar";
+import Dashboard from "./Components/Dashboard"
 import styled from "styled-components";
 import "./App.css";
 
@@ -252,7 +253,7 @@ class App extends React.Component {
       "column-1": {
         id: this.state.columns["column-1"]["id"],
         title: this.state.columns["column-1"]["title"],
-        task_ids: newtaskIds
+        task_ids: newtaskIds,
       },
       tasks: { ...this.state.tasks, [`${newKey}`]: { ...task } }
     });
@@ -323,13 +324,8 @@ class App extends React.Component {
         onDragStart={this.onDragStart}
         onDragUpdate={this.onDragUpdate}
       >
+
         <NavBar />
-        <button className="showform" onClick={() => this.showform()}>
-          <h3>Add Task!</h3>
-        </button>
-        {this.state.showform ? (
-          <Form showform={this.showform} addCard={this.addCard} />
-        ) : null}
         <Sidebar showform={this.showform} addCard={this.addCard} />
         <Container>
           {this.state.columnOrder.map((columnId, index) => {

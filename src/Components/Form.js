@@ -26,7 +26,8 @@ export default class Form extends React.Component {
         user_id: this.state.user_id,
         column_id: this.state.column_id,
         completed: false,
-        content: this.state.value
+        content: this.state.value,
+        percentage:0,
       })
     })
       .then(r => r.json())
@@ -41,7 +42,7 @@ export default class Form extends React.Component {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <label>
-          <h3>Enter task below:</h3>
+          <p className="form-txt">Add an item:</p>
         </label>
         <input
           value={this.state.value}
@@ -50,7 +51,7 @@ export default class Form extends React.Component {
           type="text"
           name="content"
         />
-        <input className="submit" type="submit" value="Submit" />
+        <input className="submit" type="submit" value="Add Task" />
       </form>
     );
   }

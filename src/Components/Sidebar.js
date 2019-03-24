@@ -1,14 +1,22 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import "../App.css";
 import Form from "./Form";
 
-function Sidebar() {
+class Sidebar extends React.Component {
+  state={
+    showform: true
+  }
+
+  render(){
   return (
     <div className="sidebar">
-      <button className="showform" onClick={() => this.showform()}>
-        <h3>Add Task!</h3>
-      </button>
+    {this.state.showform ? (
+      <Form showform={this.props.showform} addCard={this.props.addCard} />
+    ) : null}
     </div>
   );
+
+}
 }
 export default Sidebar;
