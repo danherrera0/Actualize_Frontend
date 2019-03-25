@@ -17,7 +17,7 @@ render(){
   return (
     <main>
       <Modal show={this.state.show} handleClose={this.hideModal}>
-        <h1>Wecome to actualize</h1><br/>
+        <h1>Wecome to Actualize</h1><br/>
         <h3>actualize is a drag and drop SCRUM board inspired by Trello and SCRUM theory.</h3><br/>
         <hr/><br/>
         <ul>
