@@ -1,11 +1,12 @@
 .nav {
-  height: 6.5em;
+  height: 6em;
   margin-bottom: .5em;
   max-width: 100%;
   padding-top: 0em;
   font-family: "Playfair Display", serif;
   background-size: auto;
   background-color: #f5f5f5;
+  /* background-color: #e6e9ea8f; */
   -webkit-box-shadow: 1px 1px 3px rgba(33, 33, 33, 0.7);
   /* background-image: linear-gradient(to bottom, #fbc2eb 0%, #a6c1ee 100%); */
 }
@@ -27,15 +28,15 @@
 }
 
 img {
-  height: 100px;
-  width: 18.5em;
+  height: 6.5em;
+  width: 18em;
   margin-left:1%;
   float: left;
 }
 
 html {
+  /* background-color: #e6e9ea8f; */
   background-color: #f5f5f5;
-  /* background-image: linear-gradient(to bottom, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%); */
   height: auto;
   max-width: 100%;
 }
@@ -43,20 +44,17 @@ html {
 .Card {
   background-color: #f5f5f5;
   color: #333;
-  /* font-family: "Comfortaa", cursive; */
   font-family: 'Roboto', sans-serif;
-  font-size: 70%;
+  font-size: 22px;
   -webkit-box-shadow: 2px 2px 5px rgba(33, 33, 33, 0.7);
   margin: 0.5em;
   float: left;
-  padding: 1.5%;
   text-align: left;
   display: inline-block;
-  float: left;
-  min-height: 7em;
-  max-height: 7em;
+  min-height: 6.5em;
+  max-height: 6.5em;
   width: 90%;
-  padding: 2%;
+  padding: 1%;
   overflow: auto;
 }
 
@@ -80,9 +78,9 @@ html {
 }
 
 .text {
-  margin-top: 10%;
-  margin-left: 7%;
-  padding-top: 7%;
+  margin-top: 5%;
+  margin-left: 3%;
+  padding-top: 5%;
 
 }
 
@@ -96,39 +94,10 @@ html {
   background-color: inherit;
 }
 
-.add {
-  display: inline-block;
-  text-align: center;
-  font-size: 15px;
-  float: left;
-  width: 1.5em;
-  height: 1em;
-  border-radius: 5px;
-  background-color: #00d068;
-  font-weight: bold;
-  color: black;
-  padding-bottom: 20px;
-
-}
-
-.subtract {
-  display: inline-block;
-  padding-bottom: 20px;
-  text-align: center;
-  font-size: 16px;
-  float: left;
-  width: 1.5em;
-  height: 1em;
-  border-radius: 5px;
-  background-color: #ff004e;
-  font-weight: bold;
-  color: black;
-}
-
 .form {
   position: absolute;
-  padding: 2%;
-  height: 7em;
+  padding: 3%;
+  height: 6em;
   width: 90%;
   margin-left: 1%;
   font-family: 'Baloo', cursive;
@@ -136,33 +105,15 @@ html {
   font-weight: bold;
   letter-spacing: 1px;
   border-radius: 10px;
-  background-color: #ffcb00;
-}
-
-.showform {
-  /* THIS IS FOR THE ADD TASK BUTTON */
-  /* position: relative;
-  margin-left: 0%;
-  float:left;
-  padding: 1%;
-  height: auto;
-  width: 99%;
-  opacity: 0.6px;
-  font-family: "Exo 2", sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 4px;
-  background-color:#edefef8c;
-  color: black;
-  letter-spacing: 1px;
-  -webkit-box-shadow: 1px 1px 3px rgba(33, 33, 33, 0.7); */
+  background-color: #424040fa;
+  color: white;
 }
 
 .inputForm {
   font-family: 'Roboto', sans-serif;
   /* font-family: 'Baloo', cursive; */
   width: 90%;
-  height: 6em;
+  height: 4em;
   border-style: solid;
   border-color: grey;
   border-width: thin;
@@ -189,22 +140,28 @@ font-size: 27px;
   color: black;
   border-radius: 5px;
   font-size: 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Baloo', cursive;
 }
 
 .progress-bar {
-  float: right;
+  float: left;
   position: relative;
-  height: .9em;
-  width: 8em;
-  border-radius: 50px;
+  height: 3em;
+  width: 59em;
+  border-radius: 12px;
   border: 1px solid #333;
+  margin-left: 2%;
+  margin-top: 1%;
+  background-color: #edefef;
+  border-style: solid;
+  border-width: medium;
+  border-color:  #333333;
 }
 
 .filler {
-  background: #ffcb00;
+  background: #a257df;
   height: 100%;
-  border-radius: inherit;
+  border-radius: 5px;
   transition: width 0.2s ease-in;
 }
 
@@ -257,7 +214,7 @@ font-size: 27px;
   left:50%;
   font-family: 'Roboto', sans-serif;
   border-radius: 10px;
-  background-color: #fdc00bf2;
+  background-color: #595ad4f5;
   color:white;
   letter-spacing: 1px;
   transform: translate(-50%,-50%);
@@ -298,5 +255,15 @@ margin: 1%;
 float:right;
 font-family: 'Baloo', cursive;
 color:#333333;
+}
 
+.ptext{
+  display: inline-block;
+  position: relative;
+  font-family: 'Baloo', cursive;
+  letter-spacing: 2px;
+  font-size: 38px;
+  color:white;
+  float:right;
+  margin-right:1%;
 }

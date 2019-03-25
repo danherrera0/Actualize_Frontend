@@ -4,6 +4,7 @@ import Column from "./Components/column";
 import NavBar from "./Components/NavBar";
 import Sidebar from "./Components/Sidebar";
 import Progressbar from "./Components/Progressbar"
+import Dashboard from "./Components/Dashboard"
 import styled from "styled-components";
 import "./App.css";
 
@@ -329,7 +330,7 @@ getPercent=()=>{
     })
     console.log(trueTasks.length)
     console.log(truthy.length)
-    let percentageComplete = (trueTasks.length/truthy.length * 100);
+    let percentageComplete = ((trueTasks.length/truthy.length * 100).toFixed(1));
     return percentageComplete
     }
   }

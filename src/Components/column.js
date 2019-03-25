@@ -3,7 +3,13 @@ import Task from "./Task";
 import styled from "styled-components";
 import { Droppable } from "react-beautiful-dnd";
 
-const Container = styled.div``;
+const Container = styled.div`
+border-radius: 5px;
+width: 8em;
+margin-left:auto;
+margin-right:auto;
+
+`;
 
 const Title = styled.h3``;
 
@@ -18,8 +24,19 @@ class Column extends React.Component {
             className="Container"
             {...provided.droppableProps}
             ref={provided.innerRef}
+
           >
-            <Container>
+            <Container
+            style={
+              this.props.column.id === 3
+                ? {
+                    backgroundColor: "#04cc6e"
+                  }
+                : { backgroundColor: "#ffcc01"
+                 }
+            }
+            >
+
               <Title>{this.props.column.title}</Title>
               {this.props.tasks.map((task, index) => (
                 <Task

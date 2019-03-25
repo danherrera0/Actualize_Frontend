@@ -35,14 +35,13 @@ export default class Form extends React.Component {
         this.props.addCard(task);
       });
     this.setState({ value: "" });
-    this.props.showform();
   };
 
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <label>
-          <p className="form-txt">Add Item</p>
+          <p className="form-txt">Add To do</p>
         </label>
         <input
           value={this.state.value}
@@ -51,7 +50,7 @@ export default class Form extends React.Component {
           type="text"
           name="content"
         />
-        <input className="submit" type="submit" value="Add" />
+        <input className="submit" type="submit" value="Submit" />
       </form>
     );
   }
