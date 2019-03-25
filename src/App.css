@@ -165,6 +165,7 @@ html {
   border-width: thin;
   border-radius: 4px;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 .form-txt{
@@ -275,4 +276,22 @@ font-size: 27px;
 
 .display-none {
   display: none;
+}
+
+.about{
+margin: 1%;
+float:right;
+padding-right: 10%;
+padding-top: 2%;
+font-family: 'Baloo', cursive;
+color:#333333;
+}
+
+.contact{
+padding-top: 2%;
+margin: 1%;
+float:right;
+font-family: 'Baloo', cursive;
+color:#333333;
+
 }

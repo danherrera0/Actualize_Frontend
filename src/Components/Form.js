@@ -42,7 +42,7 @@ export default class Form extends React.Component {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <label>
-          <p className="form-txt">Add an item:</p>
+          <p className="form-txt">Add Item</p>
         </label>
         <input
           value={this.state.value}
@@ -51,7 +51,7 @@ export default class Form extends React.Component {
           type="text"
           name="content"
         />
-        <input className="submit" type="submit" value="Add Task" />
+        <input className="submit" type="submit" value="Add" />
       </form>
     );
   }
