@@ -312,13 +312,11 @@ class App extends React.Component {
 getPercent=()=>{
   if(Object.values(this.state.tasks).length>0){
     let temp1 = Object.values(this.state.tasks)
-    console.log(temp1)
     if(temp1.length > 1 ){
       let truthy =[]
     temp1.map(task => {
       truthy.push(Object.values(task)[1])
     })
-    console.log(truthy)
     let trueTasks =[]
     let falseTasks =[]
     truthy.map(value=>{
@@ -328,8 +326,6 @@ getPercent=()=>{
         falseTasks.push(value)
       }
     })
-    console.log(trueTasks.length)
-    console.log(truthy.length)
     let percentageComplete = ((trueTasks.length/truthy.length * 100).toFixed(1));
     return percentageComplete
     }

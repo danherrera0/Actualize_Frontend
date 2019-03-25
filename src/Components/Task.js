@@ -2,7 +2,6 @@ import React from "react";
 import "../App.css";
 import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
-import Progressbar from "./Progressbar";
 import "react-sweet-progress/lib/style.css";
 
 const Container = styled.div``;

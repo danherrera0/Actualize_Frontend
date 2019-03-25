@@ -5,10 +5,10 @@ import { Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div`
 border-radius: 5px;
-width: 8em;
+width: 8.5em;
 margin-left:auto;
 margin-right:auto;
-
+margin: 3%;
 `;
 
 const Title = styled.h3``;
