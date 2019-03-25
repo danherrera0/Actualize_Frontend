@@ -1,5 +1,4 @@
-import React, {Component} from "react"
-import ReactDOM from "react-dom"
+import React from "react"
 
 export default function Modal ({ handleClose, show, children}){
   const showHideClassName = show ? "modal display-block" : "modal display-none";

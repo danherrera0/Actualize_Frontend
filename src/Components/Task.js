@@ -13,15 +13,20 @@ export default class Task extends React.Component {
   };
 
   updateProgress = (card, newPercentage) => {
-    console.log(newPercentage)
+
     let currentPercentage = newPercentage;
+    if(card.completed ===true){
+      currentPercentage = 100;
+    }
     if (currentPercentage < 0) {
       currentPercentage = 0;
-    } else if (currentPercentage > 100) {
-      currentPercentage = 100;
-    } else {
-      currentPercentage = newPercentage;
     }
+    if (currentPercentage > 100) {
+      currentPercentage = 100;
+    }
+    console.log("UPDATING PROGRESS", card, currentPercentage);
+
+    // this.setState=({percentage:currentPercentage})
     let cardId = parseInt(card.task_id.split("-").flat()[1]);
     fetch(`http://localhost:3000/api/v1/tasks/${cardId}`, {
       method: "PATCH",
@@ -32,8 +37,10 @@ export default class Task extends React.Component {
       body: JSON.stringify({
         percentage: currentPercentage
       })
-    })
-    };
+    }).then(r=>r.json())
+    .then(task=> console.log(task))
+  }
+
 
   increaseProgress = card => {
     let newPercentage = this.state.percentage;
@@ -44,14 +51,14 @@ export default class Task extends React.Component {
     } else {
       newPercentage = this.state.percentage + 5;
     }
+    console.log("INCREASING PROGRESS", card, newPercentage);
     this.setState(
       {
         percentage: newPercentage
-      },
-      () => {
-        this.updateProgress(card, newPercentage);
       }
-    );
+    )
+    this.updateProgress(card, newPercentage)
+    console.log("hit",this.state.percentage);
   };
 
   decreaseProgress = card => {
@@ -63,14 +70,13 @@ export default class Task extends React.Component {
     } else {
       newPercentage = this.state.percentage - 5;
     }
+    console.log("DECREASING PROGRESS", card, newPercentage);
     this.setState(
       {
         percentage: newPercentage
-      },
-      () => {
-        this.updateProgress(card, newPercentage);
       }
     );
+    this.updateProgress(card, newPercentage)
   };
 
   render() {
@@ -113,8 +119,7 @@ export default class Task extends React.Component {
               style={
                 this.props.task.completed
                   ? {
-                      textDecoration: "line-through",
-                      color: "#585858"
+                      textDecoration: "line-through"
                     }
                   : { textDecoration: "none" }
               }

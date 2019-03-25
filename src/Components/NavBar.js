@@ -5,7 +5,7 @@ import "../App.css";
 function Navbar() {
   return (
     <div className="nav">
-      <img src={logo} />
+      <img src={logo} alt="logo" />
         <h2 className="about">About</h2>
         <h2 className="contact">Contact</h2>
     </div>

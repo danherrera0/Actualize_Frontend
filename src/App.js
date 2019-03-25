@@ -1,11 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./Components/column";
 import NavBar from "./Components/NavBar";
-import Form from "./Components/Form";
 import Sidebar from "./Components/Sidebar";
-import Dashboard from "./Components/Dashboard"
+import Progressbar from "./Components/Progressbar"
 import styled from "styled-components";
 import "./App.css";
 
@@ -36,7 +34,6 @@ class App extends React.Component {
     col1Tasks: [],
     col2Tasks: [],
     col3Tasks: [],
-    showform: false
   };
 
   componentDidMount() {
@@ -151,7 +148,7 @@ class App extends React.Component {
         completed: dragged.completed,
         column_id: finish.id,
         content: dragged.content,
-        percentage: dragged.percentage
+        // percentage: dragged.percentage
       })
     });
   };
@@ -311,11 +308,32 @@ class App extends React.Component {
     }
   }; //end of deleteCard fn
 
-  showform = () => {
-    this.setState({
-      showform: !this.state.showform
-    });
-  };
+getPercent=()=>{
+  if(Object.values(this.state.tasks).length>0){
+    let temp1 = Object.values(this.state.tasks)
+    console.log(temp1)
+    if(temp1.length > 1 ){
+      let truthy =[]
+    temp1.map(task => {
+      truthy.push(Object.values(task)[1])
+    })
+    console.log(truthy)
+    let trueTasks =[]
+    let falseTasks =[]
+    truthy.map(value=>{
+      if(value === true) {
+        trueTasks.push(value)
+      }else{
+        falseTasks.push(value)
+      }
+    })
+    console.log(trueTasks.length)
+    console.log(truthy.length)
+    let percentageComplete = (trueTasks.length/truthy.length * 100);
+    return percentageComplete
+    }
+  }
+}
 
   render() {
     return (
@@ -327,6 +345,7 @@ class App extends React.Component {
 
         <NavBar />
         <Sidebar showform={this.showform} addCard={this.addCard} />
+        <Progressbar percentage={this.getPercent()}/>
         <Container>
           {this.state.columnOrder.map((columnId, index) => {
             const column = this.state.columns[columnId];

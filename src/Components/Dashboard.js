@@ -17,14 +17,10 @@ render(){
   return (
     <main>
       <Modal show={this.state.show} handleClose={this.hideModal}>
-        <h1>Wecome to Actualize</h1><br/>
-        <h3>actualize is a drag and drop SCRUM board inspired by Trello and SCRUM theory.</h3><br/>
-        <hr/><br/>
-        <ul>
-        <li><h4> You can add tasks by clicking the Add Task button above.</h4></li><br/>
-        <li><h4> You can also use the progress bar to mark your progress per task item.</h4></li><br/>
-        <li><h4> When you complete an item you can drop it into the done column or delete it. </h4></li><br/>
-        </ul>
+        <h1>Make your project vision a reality with actualize</h1><br/>
+        <h3>actualize is a drag and drop project managment web app inspired by the Trello platform and SCRUM Methodology.</h3><br/>
+        <h3>You can drag items from To do to In Progress and finally done, visually see where you are at and what needs to get done</h3><br/>
+
       </Modal>
 
     </main>
