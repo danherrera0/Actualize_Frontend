@@ -47,7 +47,7 @@ html {
   background-color: #f5f5f5;
   color: #333;
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   box-shadow: 1px 1px 1px 1px rgba(9,45,66,.25);
   float: left;
   position: relative;
@@ -56,7 +56,6 @@ html {
   min-height: 3em;
   max-height: 3em;
   min-width:13em;
-  padding: 6px 8px 2px;
   margin-left:auto;
   margin-right:auto;
   margin-top: 2%;
@@ -77,7 +76,6 @@ html {
   color: #333333;
   margin-left: 2%;
   margin-top: 0.5em;
-  /* margin-bottom: 1%; */
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 5px rgba(33, 33, 33, 0.7);
   overflow: scroll;
@@ -128,10 +126,10 @@ html {
 }
 
 .form-txt{
-margin-top: 1px;
-padding: 1%;
-font-family: 'Baloo', cursive;
-font-size: 27px;
+  margin-top: 1px;
+  padding: 1%;
+  font-family: 'Baloo', cursive;
+  font-size: 27px;
 }
 
 .submit {
@@ -190,6 +188,7 @@ font-size: 27px;
 .wiggle:hover {
   animation: wiggle 1s ease;
   animation-iteration-count: 1;
+  box-shadow: 2px 2px 2px 2px rgba(9,45,66,.25);
 }
 
 * {
@@ -214,25 +213,29 @@ font-size: 27px;
   background: white;
   width: 60%;
   height: auto;
+  font-size: 18px;
   top:50%;
   left:50%;
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Quicksand', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   border-radius: 10px;
-  background-color: #595ad4f5;
+  background-color: #8182fff5;
   color:white;
   letter-spacing: 1px;
   transform: translate(-50%,-50%);
 }
 
 .start-btn{
-  background-color: #00000096;
+  border-style: none;
+  background-color: #08080891;
   color:white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   letter-spacing: 1.5px;
   font-size: 15px;
   height: 2.7em;
   width: 9em;
-  padding: 1%;
+  padding: 0%;
   border-radius: 5px;
 }
 
@@ -245,23 +248,23 @@ font-size: 27px;
 }
 
 .about{
-margin: 1%;
+margin-bottom: 2%;
 float:right;
 padding-right: 10%;
 padding-top: 2%;
 font-family: 'Baloo', cursive;
 font-size: 30px;
-
 color:#333333;
 }
 
 .contact{
-padding-top: 2%;
-margin: 1%;
-float:right;
-font-family: 'Baloo', cursive;
-font-size: 30px;
-color:#333333;
+  margin-right: 1.5%;
+  padding-top: 2%;
+  margin-bottom: 2%;
+  float:right;
+  font-family: 'Baloo', cursive;
+  font-size: 30px;
+  color:#333333;
 }
 
 .ptext{
@@ -273,4 +276,18 @@ color:#333333;
   color:white;
   float:right;
   margin-right:1%;
+}
+
+.highlight {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 59em;
+  height: 60%;
+  opacity: .80;
+  border-radius: 12px;
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
 }
