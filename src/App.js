@@ -256,6 +256,8 @@ class App extends React.Component {
   }; //end of addCard function
 
   deleteCard = (event, card) => {
+    console.log(card)
+    delete this.state.tasks[card.task_id]
     let deletedId = parseInt(event.target.id.split("-").flat()[1]);
     fetch(`http://localhost:3000/api/v1/tasks/${deletedId}`, {
       method: "DELETE"
