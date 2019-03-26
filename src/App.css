@@ -6,7 +6,6 @@
   font-family: "Playfair Display", serif;
   background-size: auto;
   background-color: #f5f5f5;
-  /* background-color: #e6e9ea8f; */
   -webkit-box-shadow: 1px 1px 3px rgba(33, 33, 33, 0.7);
   /* background-image: linear-gradient(to bottom, #fbc2eb 0%, #a6c1ee 100%); */
 }
@@ -108,7 +107,7 @@ html {
   font-weight: bold;
   letter-spacing: 1px;
   border-radius: 10px;
-  background-color: #424040fa;
+  background-color:#ff0000b0;
   color: white;
 }
 
@@ -154,17 +153,20 @@ html {
   border-radius: 12px;
   border: 1px solid #333;
   margin-left: 2%;
-  background-color: #2a2d2d;
+  background-color:#2a2d2d91;
   border-style: solid;
-  border-width: medium;
-  border-color:  #333333;
+  border-width: thin;
+  border-color:  #2a2d2d91;
 }
 
 .filler {
-  background: #a257df;
+  background: #00a9ff;
   height: 2.5em;
   border-radius: 8px;
   transition: width 0.2s ease-in;
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
 }
 
 @keyframes wiggle {
@@ -254,7 +256,7 @@ padding-right: 10%;
 padding-top: 2%;
 font-family: 'Baloo', cursive;
 font-size: 30px;
-color:#333333;
+color:#aa41ffcf;
 }
 
 .contact{
@@ -264,18 +266,20 @@ color:#333333;
   float:right;
   font-family: 'Baloo', cursive;
   font-size: 30px;
-  color:#333333;
+  color:#aa41ffcf;
 }
 
 .ptext{
   display: inline-block;
   position: relative;
   font-family: 'Baloo', cursive;
-  letter-spacing: 3px;
-  font-size: 30px;
+  letter-spacing: 1px;
+  font-size: 26px;
   color:white;
   float:right;
   margin-right:1%;
+  margin-top:1%;
+
 }
 
 .highlight {

@@ -162,9 +162,8 @@ class App extends React.Component {
         });
       }))
   };
-  //this function updates the tasks' column_id in the backend for the card that was dragged
+  //this function updates the tasks the backend for the card that was dragged
 
-  ///////////////////////////////////////////////////////////////////////////////////////////////////
   onDragStart = () => {
     const homeIndex = start =>
       this.state.columnOrder.indexOf(start.source.droppableId);
@@ -172,11 +171,7 @@ class App extends React.Component {
       homeIndex
     });
   };
-
-  // onDragUpdate = update => {
-  //   const { destination } = update;
-  // };
-
+/////////////////////////////////////////ON DRAG END FUNCTION/////////////////////////////////////////////////////////////////////////////////////////////////////////
   onDragEnd = result => {
     this.setState({
       homeIndex: null
@@ -243,9 +238,7 @@ class App extends React.Component {
     this.updateTasks(draggableId, finish);
   };
 
-  //////////////////////////////////////////////////////////////////////////////////////
-
-  //PATCH REQUESTS TO UPDATE THE COLUMNS BACKEND FOR ONDROP CHANGES
+  /////////////////////////////////////////END OF ON DRAG END FUNCTION/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   addCard = task => {
     task.tasks_name = `task-${task.id}`;
@@ -336,7 +329,7 @@ getPercent=()=>{
         falseTasks.push(value)
       }
     })
-    let percentageComplete = ((trueTasks.length/truthy.length * 100).toFixed(1));
+    let percentageComplete = ((trueTasks.length/truthy.length * 100).toFixed(0));
     return percentageComplete
     }
   }
