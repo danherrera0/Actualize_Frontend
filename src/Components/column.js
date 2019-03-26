@@ -35,9 +35,13 @@ class Column extends React.Component {
               <Title
                 style={
                   this.props.column.id === 3
-                  ? { backgroundColor: "#04cc6e"
+                  ? { backgroundColor: "#04cc6e",
+                      borderRadius: "10px",
+                      width: "7em"
                     }
-                  : { backgroundColor: "#ffcb02"
+                  : { backgroundColor: "#ffcb02",
+                      borderRadius: "10px",
+                      width: "7em"
                     }
                   }
                 > {this.props.column.title}</Title>

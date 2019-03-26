@@ -4,7 +4,10 @@ import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
 import "react-sweet-progress/lib/style.css";
 
-const Container = styled.div``;
+const Container = styled.div`
+border-color: ${props => (props.isDragging) ? "#777777e8": "none"};
+background-color: ${props => (props.isDragging ? "#777777e8" : "#f5f5f5")};
+`;
 
 export default class Task extends React.Component {
 
@@ -12,12 +15,13 @@ export default class Task extends React.Component {
     return (
       <Draggable draggableId={this.props.task.task_id} index={this.props.index}
       >
-        {provided => (
+        {(provided, snapshot)=> (
           <Container
             className="Card wiggle"
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
+            isDragging={snapshot.isDragging}
           >
             <button
               onClick={event => this.props.delete(event, this.props.task)}
