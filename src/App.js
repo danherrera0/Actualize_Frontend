@@ -134,11 +134,13 @@ class App extends React.Component {
   updateTasks = (draggableId, finish) => {
     let dragged = this.state.tasks[draggableId];
     let draggedId = parseInt(draggableId.split("-").flat()[1]);
+
     if (finish.id === 3) {
       dragged.completed = true;
     } else if (finish.id === 1 || finish.id === 2) {
       dragged.completed = false;
     }
+    console.log(dragged.completed)
     fetch(`http://localhost:3000/api/v1/tasks/${draggedId}`, {
       method: "PATCH",
       headers: {
@@ -149,7 +151,16 @@ class App extends React.Component {
         column_id: finish.id,
         content: dragged.content,
       })
-    });
+    }).then(response => fetch("http://localhost:3000/api/v1/tasks")
+      .then(r => r.json())
+      .then(tasks => {
+        let myTasks = tasks.reduce((final, elem) => {
+          return Object.assign(final, elem);
+        }, {});
+        this.setState({
+          tasks: myTasks
+        });
+      }))
   };
   //this function updates the tasks' column_id in the backend for the card that was dragged
 
@@ -256,7 +267,6 @@ class App extends React.Component {
   }; //end of addCard function
 
   deleteCard = (event, card) => {
-    console.log(card)
     delete this.state.tasks[card.task_id]
     let deletedId = parseInt(event.target.id.split("-").flat()[1]);
     fetch(`http://localhost:3000/api/v1/tasks/${deletedId}`, {
