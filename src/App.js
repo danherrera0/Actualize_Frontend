@@ -9,8 +9,9 @@ import styled from "styled-components";
 import "./App.css";
 
 const Container = styled.div``;
-const heroku_url= `https://actualize-backend.herokuapp.com/api/v1/`
-const localhost_url= `http://localhost:3000/api/v1/`
+
+const heroku_url= "https://actualize-backend.herokuapp.com/api/v1/"
+const localhost_url= "http://localhost:3000/api/v1/"
 
 class App extends React.Component {
   state = {
