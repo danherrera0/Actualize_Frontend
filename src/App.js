@@ -335,6 +335,9 @@ getPercent=()=>{
     let percentageComplete = ((trueTasks.length/truthy.length * 100).toFixed(0));
     return percentageComplete
     }
+  }else{
+    let percentageComplete = 0
+    return percentageComplete
   }
 }
 
