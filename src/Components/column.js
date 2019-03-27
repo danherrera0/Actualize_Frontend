@@ -4,11 +4,12 @@ import styled from "styled-components";
 import { Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div`
-width: 8.5em;
+height:2.5em;
 margin-left:auto;
 margin-right:auto;
-margin: 3%;
 border-radius:15px;
+font-size: 24px;
+
 `;
 
 const Title = styled.h3`
@@ -26,25 +27,27 @@ class Column extends React.Component {
             className="Container"
             {...provided.droppableProps}
             ref={provided.innerRef}
-
           >
-            <Container
-
-            >
+          <Container>
 
               <Title
                 style={
                   this.props.column.id === 3
                   ? { backgroundColor: "#04cc6e",
                       borderRadius: "10px",
-                      width: "7em"
+                      width: "9.7em",
+                      marginBottom: "1%",
+                      height: "1.7em"
                     }
                   : { backgroundColor: "#ffcb02",
                       borderRadius: "10px",
-                      width: "7em"
+                      width: "9.7em",
+                      marginBottom: "1%",
+                      height: "1.7em"
                     }
                   }
-                > {this.props.column.title}</Title>
+                > <div>{this.props.column.title}</div>
+                </Title>
               {this.props.tasks.map((task, index) => (
                 <Task
                   delete={this.props.delete}

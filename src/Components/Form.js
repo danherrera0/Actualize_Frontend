@@ -40,8 +40,9 @@ export default class Form extends React.Component {
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
+      <div className="form-highlight"></div>
         <label>
-          <p className="form-txt">Add To do</p>
+          <p className="form-txt">Add Item</p>
         </label>
         <input
           value={this.state.value}
