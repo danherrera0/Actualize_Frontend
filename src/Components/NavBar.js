@@ -5,9 +5,8 @@ import "../App.css";
 function Navbar() {
   return (
     <div className="nav">
-      <img src={logo} alt="logo" />
-        <h2 className="about">About</h2>
-        <h2 className="contact">Contact</h2>
+    <img src={logo} alt="logo" />
+    <h1 className="contact"><a href="https://medium.com/@daniaherrera" target="_blank">Contact</a></h1>
     </div>
   );
 }

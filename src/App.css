@@ -34,30 +34,31 @@
   display:inline-block;
   float: left;
   border-radius:10px;
-  text-align: center;
-  min-height: 3em;
-  max-height: 3em;
-  min-width:14em;
-  margin-left:2%;
+  text-align: left;
+  min-height: 3.5em;
+  max-height: 3.5em;
+  min-width:14.5em;
+  margin-left:.6%;
   margin-right:auto;
   margin-top: 2%;
   overflow-y:scroll;
 }
 
 .container {
-  height: 550px;
+  height: 600px;
   width: 20%;
   background-color: #dee3e6;
   -webkit-box-shadow: 2px 2px 5px rgba(33, 33, 33, 0.7);
-  padding: 0.4em;
+  padding: 0.5em;
   float: left;
-  margin-left: 2%;
+  margin-left: .5%;
+  margin-right: .5%;
   margin-top: 0.5em;
   border-radius: 10px;
   font-family: 'Baloo', cursive;
   text-align: center;
   color: #333333;
-  overflow: scroll;
+  overflow-y:scroll;
 }
 
 .task-text{
@@ -146,12 +147,12 @@
   float: left;
   position: relative;
   height: 2.5em;
-  width: 57.5em;
+  width: 58.5em;
   border-radius: 12px;
   border: 1px solid #333;
   margin-top: .5%;
   margin-bottom: .5%;
-  margin-left: 2%;
+  margin-left: .5%;
   background-color:#2a2d2d91;
   border-style: solid;
   border-width: thin;
@@ -239,21 +240,12 @@
   display: none;
 }
 
-.about{
-  float:right;
-  padding-right: 8.5%;
-  padding-top: 2.5%;
-  font-family: 'Baloo', cursive;
-  font-size: 23px;
-  color:#333333;
-}
-
 .contact{
-  margin-right: 1.5%;
-  padding-top: 2.5%;
+  margin-right: 4em;
+  padding-top: 2.4%;
   float:right;
   font-family: 'Baloo', cursive;
-  font-size: 23px;
+  font-size: 30px;
   color:#333333;
 }
 
@@ -294,10 +286,15 @@ html {
   max-height: 100%;
   max-width: 100%;
   background-color: #edefef;
-  overflow-y:scroll;
+  box-sizing: border-box;
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+
+a{
+  color:#6a676dba;
+  text-decoration: none;
 }

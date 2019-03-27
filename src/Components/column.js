@@ -5,6 +5,7 @@ import { Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div`
 height:2.5em;
+padding-left: 5px;
 margin-left:auto;
 margin-right:auto;
 border-radius:15px;
