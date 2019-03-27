@@ -12,11 +12,10 @@ export default class Task extends React.Component {
 
   render() {
     return (
-      <Draggable draggableId={this.props.task.task_id} index={this.props.index}
-      >
+      <Draggable draggableId={this.props.task.task_id} index={this.props.index}>
         {(provided, snapshot)=> (
           <Container
-            className="Card wiggle"
+            className="card wiggle"
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
@@ -30,19 +29,18 @@ export default class Task extends React.Component {
               X
             </button>
             <p
-              className="text"
+              className="task-text"
               style={
                 this.props.task.completed
-                  ? {
-                      textDecoration: "line-through"
-                    }
-                  : { textDecoration: "none"
-                   }
+                ? {
+                    textDecoration: "line-through"
+                  }
+                : { textDecoration: "none"
+                 }
               }
             >
               {this.props.task.content}
             </p>
-
           </Container>
         )}
       </Draggable>

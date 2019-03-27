@@ -16,13 +16,11 @@ hideModal = () =>{
 render(){
   return (
     <main>
-
       <Modal show={this.state.show} handleClose={this.hideModal}>
-        <h1>Make your project vision a reality with Actualize</h1><br/>
-        <h3>Actualize is a drag and drop project managment web app inspired by the Trello platform and SCRUM Methodology.</h3><br/>
-        <h3>You can drag items from "To do" to "In Progress" to "Done", allowing you to visualize your goals and progress.</h3><br/>
+        <h1>Make your project vision a reality with actualize</h1><br/>
+        <h3>actualize is a drag and drop project managment web app inspired by the Trello platform and SCRUM Methodology.</h3><br/>
+        <h3>You can add, reorder, and drag items from "To do" to "In Progress" to "Done", allowing you to visualize your goals and progress.</h3><br/>
       </Modal>
-
     </main>
   )
  }

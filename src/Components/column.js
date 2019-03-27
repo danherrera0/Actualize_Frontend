@@ -9,7 +9,6 @@ margin-left:auto;
 margin-right:auto;
 border-radius:15px;
 font-size: 24px;
-
 `;
 
 const Title = styled.h3`
@@ -24,12 +23,11 @@ class Column extends React.Component {
       <Droppable droppableId={`column-${this.props.column.id}`}>
         {provided => (
           <TaskList
-            className="Container"
+            className="container"
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
           <Container>
-
               <Title
                 style={
                   this.props.column.id === 3

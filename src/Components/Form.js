@@ -36,11 +36,12 @@ export default class Form extends React.Component {
       });
     this.setState({ value: "" });
   };
+  //adds task to backend
 
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
-      <div className="form-highlight"></div>
+        <div className="form-highlight"></div>
         <label>
           <p className="form-txt">Add Item</p>
         </label>
@@ -51,8 +52,8 @@ export default class Form extends React.Component {
           type="text"
           name="content"
         />
-        <input className="submit" type="submit" value="Submit" />
+        <input className="submit-btn" type="submit" value="Submit" />
       </form>
-    );
+    )
   }
 }

@@ -7,106 +7,89 @@
   background-size: auto;
   background-color: #f5f5f5;
   -webkit-box-shadow: 1px 1px 3px rgba(33, 33, 33, 0.7);
-  /* background-image: linear-gradient(to bottom, #fbc2eb 0%, #a6c1ee 100%); */
 }
 .sidebar {
   position: relative;
+  float: left;
+  margin-left: 1%;
+  border-radius: 5px;
+  height: 600px;
+  width: 23%;
   padding: 0.4em;
   font-family: "Exo 2", sans-serif;
   font-weight: bold;
   font-size: 30px;
   text-align: center;
-  height: 600px;
-  width: 23%;
-  float: left;
   color: #333;
-  margin-left: 1%;
-  /* margin-top: 1%; */
-  border-radius: 5px;
   overflow: scroll;
 }
 
-img {
-  height: 6em;
-  width: 18em;
-  margin-left:1%;
-  float: left;
-}
-
-html {
-  background-color: #edefef;
-  /* background-color: #f5f5f5; */
-  max-width: 100%;
-  box-sizing: border-box;
-  max-height: 100%;
-  overflow: scroll;
-}
-
-.Card {
+.card {
   background-color: #f5f5f5;
+  box-shadow: 1px 1px 1px 1px rgba(9,45,66,.25);
   color: #333;
   font-family: 'Roboto', sans-serif;
   font-size: 19px;
-  box-shadow: 1px 1px 1px 1px rgba(9,45,66,.25);
-  float: left;
   position: relative;
-  text-align: center;
   display:inline-block;
+  float: left;
+  border-radius:10px;
+  text-align: center;
   min-height: 3em;
   max-height: 3em;
   min-width:14em;
   margin-left:2%;
   margin-right:auto;
   margin-top: 2%;
-  overflow: auto;
-  border-radius:10px;
+  overflow-y:scroll;
 }
 
-.Container {
-  padding: 0.4em;
-  font-family: 'Baloo', cursive;
-  text-align: center;
+.container {
   height: 550px;
-  width: 19%;
-  float: left;
+  width: 20%;
   background-color: #dee3e6;
-  color: #333333;
+  -webkit-box-shadow: 2px 2px 5px rgba(33, 33, 33, 0.7);
+  padding: 0.4em;
+  float: left;
   margin-left: 2%;
   margin-top: 0.5em;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 5px rgba(33, 33, 33, 0.7);
+  font-family: 'Baloo', cursive;
+  text-align: center;
+  color: #333333;
   overflow: scroll;
 }
 
-.text {
-  margin-top: 5%;
-  margin-left: 2%;
-  padding-top: 3%;
+.task-text{
+  margin-top: 2%;
+  margin-left: 1%;
+  padding-top: .5%;
+  padding-right: 1%;
 }
 
 .delete {
+  background-color: inherit;
   position: relative;
-  float: right;
+  float: left;
   margin: 3%;
   border-style: none;
   font-weight: bold;
   font-size: 90%;
-  background-color: inherit;
 }
 
 .form {
   position: relative;
-  padding: 3%;
   height: 7em;
   max-width: 11em;
+  padding: 3%;
   margin-left: 1%;
   font-family: 'Baloo', cursive;
   font-size: 30px;
   font-weight: bold;
   letter-spacing: 1px;
-  border-radius: 10px;
   background-color:#ff0000b0;
   color: white;
+  border-radius: 10px;
   border-style: solid;
   border-color: #00000029;
 }
@@ -118,25 +101,22 @@ html {
   left: 0;
   margin: auto;
   width: 10.7em;
-  height: 7%;
+  height: 5%;
   opacity: .80;
   border-radius: 6px;
   background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
   background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
 }
 
-
 .inputForm {
-  font-family: 'Roboto', sans-serif;
-  /* font-family: 'Baloo', cursive; */
   width: 90%;
   height: 4em;
+  margin-bottom: 10%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
   border-style: solid;
   border-color: #00000029;
-  border-radius: 4px;
-  font-size: 20px;
   border-radius: 10px;
-  margin-bottom: 10%;
 }
 
 .form-txt{
@@ -147,19 +127,19 @@ html {
   color:#fff7f7ed;
 }
 
-.submit {
-  letter-spacing: 1px;
-  margin-left: 0%;
-  margin-top: 2%;
+.submit-btn{
   height: 1.5em;
   width: 30%;
+  margin-left: 0%;
+  margin-top: 2%;
+  background-color: #00000082;
+  font-family: 'Baloo', cursive;
+  color: white;
+  font-size: 17px;
+  letter-spacing: 1px;
   border-style: solid;
   border-color: #00000029;
-  background-color: #00000082;
-  color: white;
   border-radius: 5px;
-  font-size: 17px;
-  font-family: 'Baloo', cursive;
 }
 
 .progress-bar {
@@ -178,14 +158,14 @@ html {
   border-color:  #2a2d2d91;
 }
 
-.filler {
+.filler{
   background: #1294fb;
   height: 2.5em;
-  border-radius: 8px;
-  transition: width 0.2s ease-in;
+  transition: width .5s ease-in;
   border-style: solid;
   border-width: thin;
   border-color: black;
+  border-radius: 8px;
 }
 
 @keyframes wiggle {
@@ -212,11 +192,6 @@ html {
   box-shadow: 2px 2px 2px 2px rgba(9,45,66,.25);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .modal {
   position: fixed;
   top: 0;
@@ -225,37 +200,35 @@ html {
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
   font-family: 'Roboto', sans-serif;
-
 }
 
 .modal-main {
-  padding: 2%;
   position:fixed;
-  background: white;
-  width: 60%;
-  height: auto;
-  font-size: 18px;
   top:50%;
   left:50%;
+  width: 60%;
+  height: auto;
+  padding: 2%;
   font-family: 'Quicksand', sans-serif;
+  letter-spacing: 1px;
+  font-size: 18px;
   border-radius: 10px;
   background-color: #8182fff5;
   color:white;
-  letter-spacing: 1px;
   transform: translate(-50%,-50%);
 }
 
 .start-btn{
-  border-style: none;
+  height: 2.7em;
+  width: 9em;
   background-color: #08080891;
   color:white;
   font-family: 'Quicksand', sans-serif;
-  letter-spacing: 1.5px;
   font-size: 15px;
-  height: 2.7em;
-  width: 9em;
+  letter-spacing: 1.5px;
   padding: 0%;
   border-radius: 5px;
+  border-style: none;
 }
 
 .display-block {
@@ -267,12 +240,12 @@ html {
 }
 
 .about{
-float:right;
-padding-right: 8.5%;
-padding-top: 2.5%;
-font-family: 'Baloo', cursive;
-font-size: 23px;
-color:#5f5b63e8;
+  float:right;
+  padding-right: 8.5%;
+  padding-top: 2.5%;
+  font-family: 'Baloo', cursive;
+  font-size: 23px;
+  color:#333333;
 }
 
 .contact{
@@ -281,23 +254,22 @@ color:#5f5b63e8;
   float:right;
   font-family: 'Baloo', cursive;
   font-size: 23px;
-  color:#5f5b63e8;
+  color:#333333;
 }
 
-.ptext{
-  display: inline-block;
+.percent-text{
   position: relative;
-  font-family: 'Baloo', cursive;
-  letter-spacing: 1px;
-  font-size: 26px;
-  color:#fff7f7ed;
-  float:right;
   margin-right:1%;
   margin-top:1%;
-
+  display: inline-block;
+  float:right;
+  font-family: 'Baloo', cursive;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color:#fff7f7ed;
 }
 
-.highlight {
+.filler-highlight{
   position: absolute;
   top: 0px;
   right: 0;
@@ -309,4 +281,23 @@ color:#5f5b63e8;
   border-radius: 12px;
   background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
   background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+}
+
+img {
+  height: 6em;
+  width: 18em;
+  margin-left:1%;
+  float: left;
+}
+
+html {
+  max-height: 100%;
+  max-width: 100%;
+  background-color: #edefef;
+  overflow-y:scroll;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
