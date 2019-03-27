@@ -70,7 +70,7 @@
   position: absolute;
   float:left;
   left:0;
-  top:10%;
+  top:12%;
   height: 5em;
   width: 19.5%;
   padding: 1%;
@@ -112,7 +112,7 @@
 }
 
 .form-txt{
-  margin-left: 35%;
+  margin-left: 30%;
   margin-bottom: 1%;
   font-family: 'Baloo', cursive;
   font-size: 25px;
@@ -240,7 +240,7 @@
   float:right;
   font-family: 'Baloo', cursive;
   font-size: 30px;
-  color:#333333;
+  color:#302f31fc;
 }
 
 .percent-text{
@@ -296,6 +296,6 @@ html {
 }
 
 a{
-  color:#6a676dba;
+  color:#302f31cf;
   text-decoration: none;
 }
