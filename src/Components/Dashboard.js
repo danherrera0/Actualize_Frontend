@@ -18,8 +18,12 @@ render(){
     <main>
       <Modal show={this.state.show} handleClose={this.hideModal}>
         <h1>Make your project vision a reality with actualize</h1><br/>
-        <h3>actualize is a drag and drop project managment web app inspired by the Trello platform and SCRUM Methodology.</h3><br/>
-        <h3>You can add, reorder, and drag items from "To do" to "In Progress" to "Done", allowing you to visualize your goals and progress.</h3><br/>
+          <ul className = "modal-txt">
+            <li>Lay out all your tasks and reorder them according to importance</li>
+            <li>Drag and drop tasks from "To Do" to "In Progress" to "Done"</li>
+            <li>See your completion percentage with a live progress bar</li>
+          </ul><br/>
+
       </Modal>
     </main>
   )
