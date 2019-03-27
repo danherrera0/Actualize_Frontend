@@ -162,7 +162,7 @@ class App extends React.Component {
         }, {});
         this.setState({
           tasks: myTasks
-        });
+        }, ()=>this.getPercent());
       }))
   };
   //this function updates the tasks the backend for the card that was dragged
