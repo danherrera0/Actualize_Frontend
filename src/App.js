@@ -6,6 +6,7 @@ import Sidebar from "./Components/Sidebar";
 import Progressbar from "./Components/Progressbar"
 import Dashboard from "./Components/Dashboard"
 import styled from "styled-components";
+import Form from "./Components/Form"
 import "./App.css";
 
 const Container = styled.div``;
@@ -41,7 +42,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch(`${heroku_url}tasks`)
+    fetch(`${localhost_url}tasks`)
       .then(r => r.json())
       .then(tasks => {
         let myTasks = tasks.reduce((final, elem) => {
@@ -51,7 +52,7 @@ class App extends React.Component {
           tasks: myTasks
         });
       });
-    fetch(`${heroku_url}columns`)
+    fetch(`${localhost_url}columns`)
       .then(r => r.json())
       .then(apiColumns => {
         let myColumns = apiColumns.reduce((final, elem) => {
@@ -102,7 +103,7 @@ class App extends React.Component {
     let startIds = start.task_ids.map(task_id => {
       return this.state.tasks[task_id];
     });
-    fetch(`${heroku_url}columns/${start.id}`, {
+    fetch(`${localhost_url}columns/${start.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -120,7 +121,7 @@ class App extends React.Component {
     let finishIds = finish.task_ids.map(task_id => {
       return this.state.tasks[task_id];
     });
-    fetch(`${heroku_url}columns/${finish.id}`, {
+    fetch(`${localhost_url}columns/${finish.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -144,7 +145,7 @@ class App extends React.Component {
       dragged.completed = false;
     }
     console.log(draggedId)
-    fetch(`${heroku_url}tasks/${draggedId}`, {
+    fetch(`${localhost_url}tasks/${draggedId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -154,7 +155,7 @@ class App extends React.Component {
         column_id: finish.id,
         content: dragged.content,
       })
-    }).then(response => fetch(`${heroku_url}tasks`)
+    }).then(response => fetch(`${localhost_url}tasks`)
       .then(r => r.json())
       .then(tasks => {
         let myTasks = tasks.reduce((final, elem) => {
@@ -265,7 +266,7 @@ class App extends React.Component {
   deleteCard = (event, card) => {
     delete this.state.tasks[card.task_id]
     let deletedId = parseInt(event.target.id.split("-").flat()[1]);
-    fetch(`${heroku_url}tasks/${deletedId}`, {
+    fetch(`${localhost_url}tasks/${deletedId}`, {
       method: "DELETE"
     });
     let column1task_ids = this.state.columns["column-1"].task_ids;
@@ -350,7 +351,8 @@ getPercent=()=>{
       >
 
         <NavBar />
-        <Sidebar showform={this.showform} addCard={this.addCard} />
+        {/*<Sidebar showform={this.showform} addCard={this.addCard} />*/}
+        <Form showform={this.showform} addCard={this.addCard}/>
         <Progressbar percentage={this.getPercent()}/>
         <Container>
           {this.state.columnOrder.map((columnId, index) => {

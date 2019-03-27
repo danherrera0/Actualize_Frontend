@@ -19,7 +19,7 @@ class Form extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    fetch(`${heroku_url}tasks`, {
+    fetch(`${localhost_url}tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

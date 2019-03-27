@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <div className="nav">
     <img src={logo} alt="logo" />
-    <h1 className="contact"><a href="https://medium.com/@daniaherrera" target="_blank">Contact</a></h1>
+    <h1 className="contact"><a href="https://medium.com/@daniaherrera" target="_blank" rel="noopener noreferrer" >Contact</a></h1>
     </div>
   );
 }

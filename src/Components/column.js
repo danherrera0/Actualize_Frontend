@@ -4,15 +4,16 @@ import styled from "styled-components";
 import { Droppable } from "react-beautiful-dnd";
 
 const Container = styled.div`
-height:2.5em;
 padding-left: 5px;
 margin-left:auto;
 margin-right:auto;
-border-radius:15px;
+border-radius:5%;
 font-size: 24px;
 `;
 
 const Title = styled.h3`
+width: 100%;
+
 `;
 
 const TaskList = styled.div`
@@ -33,16 +34,12 @@ class Column extends React.Component {
                 style={
                   this.props.column.id === 3
                   ? { backgroundColor: "#04cc6e",
-                      borderRadius: "10px",
-                      width: "9.7em",
+                      borderRadius: "15px",
                       marginBottom: "1%",
-                      height: "1.7em"
                     }
                   : { backgroundColor: "#ffcb02",
-                      borderRadius: "10px",
-                      width: "9.7em",
+                      borderRadius: "15px",
                       marginBottom: "1%",
-                      height: "1.7em"
                     }
                   }
                 > <div>{this.props.column.title}</div>

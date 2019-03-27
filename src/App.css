@@ -1,5 +1,5 @@
 .nav {
-  height: 5.5em;
+  height: 88px;
   margin-bottom: .5em;
   max-width: 100%;
   padding-top: 0em;
@@ -7,21 +7,6 @@
   background-size: auto;
   background-color: #f5f5f5;
   -webkit-box-shadow: 1px 1px 3px rgba(33, 33, 33, 0.7);
-}
-.sidebar {
-  position: relative;
-  float: left;
-  margin-left: 1%;
-  border-radius: 5px;
-  height: 600px;
-  width: 23%;
-  padding: 0.4em;
-  font-family: "Exo 2", sans-serif;
-  font-weight: bold;
-  font-size: 30px;
-  text-align: center;
-  color: #333;
-  overflow: scroll;
 }
 
 .card {
@@ -37,7 +22,7 @@
   text-align: left;
   min-height: 3.5em;
   max-height: 3.5em;
-  min-width:14.5em;
+  width:98.5%;
   margin-left:.6%;
   margin-right:auto;
   margin-top: 2%;
@@ -45,15 +30,17 @@
 }
 
 .container {
+  position: relative;
+  left: 23%;
+  display: inline-block;
   height: 600px;
   width: 20%;
   background-color: #dee3e6;
   -webkit-box-shadow: 2px 2px 5px rgba(33, 33, 33, 0.7);
   padding: 0.5em;
   float: left;
-  margin-left: .5%;
-  margin-right: .5%;
-  margin-top: 0.5em;
+  margin-left: 1.2%;
+  margin-top: 3.5%;
   border-radius: 10px;
   font-family: 'Baloo', cursive;
   text-align: center;
@@ -79,10 +66,30 @@
 }
 
 .form {
-  position: relative;
+  position: absolute;
+  float:left;
+  left:0;
+  height: 5em;
+  width: 19.5%;
+  padding: 1%;
+  margin-left: 1%;
+  font-family: 'Baloo', cursive;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color:#ff0000b0;
+  color: white;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #00000029;
+}
+.sidebar {
+  position: absolute;
+  float:left;
+  left:0;
   height: 7em;
   max-width: 11em;
-  padding: 3%;
+  padding: 1%;
   margin-left: 1%;
   font-family: 'Baloo', cursive;
   font-size: 30px;
@@ -101,7 +108,7 @@
   right: 0;
   left: 0;
   margin: auto;
-  width: 10.7em;
+  width: 99.5%;
   height: 5%;
   opacity: .80;
   border-radius: 6px;
@@ -110,8 +117,8 @@
 }
 
 .inputForm {
-  width: 90%;
-  height: 4em;
+  width: 98%;
+  height: 3.5em;
   margin-bottom: 10%;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
@@ -129,10 +136,11 @@
 }
 
 .submit-btn{
+  position: absolute;
+  left:18em;
+  top: 9em;
   height: 1.5em;
-  width: 30%;
-  margin-left: 0%;
-  margin-top: 2%;
+  width: 20%;
   background-color: #00000082;
   font-family: 'Baloo', cursive;
   color: white;
@@ -145,14 +153,15 @@
 
 .progress-bar {
   float: left;
-  position: relative;
+  position: absolute;
+  left: 22%;
   height: 2.5em;
-  width: 58.5em;
+  width: 65.5%;
   border-radius: 12px;
   border: 1px solid #333;
-  margin-top: .5%;
+  margin-top: .1%;
   margin-bottom: .5%;
-  margin-left: .5%;
+  margin-left: 2%;
   background-color:#2a2d2d91;
   border-style: solid;
   border-width: thin;
@@ -269,7 +278,7 @@
   right: 0;
   left: 0;
   margin: auto;
-  width: 57.5em;
+  width: 99.5%;
   height: 30%;
   opacity: .80;
   border-radius: 12px;
