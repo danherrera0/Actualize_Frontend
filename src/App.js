@@ -162,7 +162,7 @@ class App extends React.Component {
         }, {});
         this.setState({
           tasks: myTasks
-        }, ()=>this.getPercent());
+        });
       }))
   };
   //this function updates the tasks the backend for the card that was dragged
@@ -318,7 +318,7 @@ class App extends React.Component {
 getPercent=()=>{
   if(Object.values(this.state.tasks).length>0){
     let temp1 = Object.values(this.state.tasks)
-    if(temp1.length > 1 ){
+    if(temp1.length > 0 ){
       let truthy =[]
     temp1.map(task => {
       truthy.push(Object.values(task)[1])
