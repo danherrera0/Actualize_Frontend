@@ -143,7 +143,7 @@ class App extends React.Component {
     } else if (finish.id === 1 || finish.id === 2) {
       dragged.completed = false;
     }
-    console.log(dragged.completed)
+    console.log(draggedId)
     fetch(`${heroku_url}tasks/${draggedId}`, {
       method: "PATCH",
       headers: {

@@ -1,7 +1,10 @@
 import React from "react";
 import "../App.css";
 
-export default class Form extends React.Component {
+const heroku_url= "https://actualize-backend.herokuapp.com/api/v1/"
+const localhost_url= "http://localhost:3000/api/v1/"
+
+class Form extends React.Component {
   state = {
     user_id: 1,
     column_id: 1,
@@ -16,7 +19,7 @@ export default class Form extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    fetch("http://localhost:3000/api/v1/tasks", {
+    fetch(`${heroku_url}tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +30,6 @@ export default class Form extends React.Component {
         column_id: this.state.column_id,
         completed: false,
         content: this.state.value,
-        percentage:0,
       })
     })
       .then(r => r.json())
@@ -57,3 +59,5 @@ export default class Form extends React.Component {
     )
   }
 }
+
+export default Form
