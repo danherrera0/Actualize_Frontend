@@ -33,7 +33,6 @@
   position: relative;
   left: 23%;
   display: inline-block;
-  /* height: 620px; */
   height: 38.6em;
   width: 20%;
   background-color: #dee3e6;
@@ -41,7 +40,7 @@
   padding: 0.5em;
   float: left;
   margin-left: 1.2%;
-  margin-top: 3.5%;
+  margin-top: 3.7%;
   border-radius: 10px;
   font-family: 'Baloo', cursive;
   text-align: center;
@@ -121,8 +120,9 @@
 
 .submit-btn{
   position: absolute;
-  left:40%;
-  top: 8.5em;
+  left:35%;
+  top:80%;
+  bottom:35%;
   height: 1.5em;
   width: 25%;
   background-color: #00000082;
@@ -133,6 +133,7 @@
   border-style: solid;
   border-color: #00000029;
   border-radius: 5px;
+
 }
 
 .progress-bar {
@@ -148,6 +149,7 @@
   margin-left: 2%;
   background-color:#2a2d2d91;
   border-style: solid;
+  border-width: medium;
   border-color: #00000029;
 }
 
@@ -159,6 +161,20 @@
   border-width: thin;
   border-color: #00000029;
   border-radius: 8px;
+}
+
+.filler-highlight{
+  position: absolute;
+  top: 0px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 99.5%;
+  height: 25%;
+  opacity: .80;
+  border-radius: 12px;
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
 }
 
 @keyframes wiggle {
@@ -256,19 +272,6 @@
   color:#fff7f7ed;
 }
 
-.filler-highlight{
-  position: absolute;
-  top: 0px;
-  right: 0;
-  left: 0;
-  margin: auto;
-  width: 99.5%;
-  height: 30%;
-  opacity: .80;
-  border-radius: 12px;
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-}
 
 .modal-txt{
   margin-left: 3%;
