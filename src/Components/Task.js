@@ -5,7 +5,7 @@ import { Draggable } from "react-beautiful-dnd";
 import "react-sweet-progress/lib/style.css";
 
 const Container = styled.div`
-background-color: ${props => (props.isDragging ? "#ba6effb5" : "#f5f5f5")};
+background-color: ${props => (props.isDragging ? "#ba6effb5" : "white")};
 `;
 
 export default class Task extends React.Component {

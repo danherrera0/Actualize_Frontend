@@ -2,7 +2,6 @@ import React from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import Column from "./Components/column";
 import NavBar from "./Components/NavBar";
-import Sidebar from "./Components/Sidebar";
 import Progressbar from "./Components/Progressbar"
 import Dashboard from "./Components/Dashboard"
 import styled from "styled-components";
@@ -351,7 +350,6 @@ getPercent=()=>{
       >
 
         <NavBar />
-        {/*<Sidebar showform={this.showform} addCard={this.addCard} />*/}
         <Form showform={this.showform} addCard={this.addCard}/>
         <Progressbar percentage={this.getPercent()}/>
         <Container>
@@ -373,6 +371,7 @@ getPercent=()=>{
           })}
         </Container>
       </DragDropContext>
+
     );
   }
 }
