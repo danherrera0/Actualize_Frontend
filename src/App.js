@@ -7,6 +7,7 @@ import Dashboard from "./Components/Dashboard"
 import styled from "styled-components";
 import Form from "./Components/Form"
 import "./App.css";
+import Sidebar from "./Components/Sidebar"
 
 const Container = styled.div``;
 
@@ -16,6 +17,7 @@ const localhost_url= "http://localhost:3000/api/v1/"
 class App extends React.Component {
   state = {
     tasks: [],
+    showGif:false,
     columns: {
       "column-1": {
         id: "column-1",
@@ -234,14 +236,26 @@ class App extends React.Component {
         [`column-${newStart.id}`]: newStart,
         [`column-${newFinish.id}`]: newFinish
       }
-    };
+    }
+
     this.setState(newState);
     this.patchStartAfterDrop(start);
     this.patchFinishAfterDrop(finish);
     this.updateTasks(draggableId, finish);
+    this.showGif(finish)
+    setTimeout(this.resetGif, 5000)
   };
 
   /////////////////////////////////////////END OF ON DRAG END FUNCTION/////////////////////////////////////////////////////////////////////////////////////////////////////////
+  showGif=(finish)=>{
+    if(finish.id===3){
+      this.setState({showGif:true})
+    }
+  }
+
+  resetGif=(finish)=>{
+    this.setState({showGif:false})
+  }
 
   addCard = task => {
     task.tasks_name = `task-${task.id}`;
@@ -351,6 +365,7 @@ getPercent=()=>{
 
         <NavBar />
         <Form showform={this.showform} addCard={this.addCard}/>
+        <Sidebar clicked={this.state.showGif}/>
         <Progressbar percentage={this.getPercent()}/>
         <Container>
           {this.state.columnOrder.map((columnId, index) => {
