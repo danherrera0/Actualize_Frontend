@@ -29,7 +29,7 @@
 
 .container {
   position: relative;
-  left: 7%;
+  left: 5%;
   display: inline-block;
   height: 35.6em;
   width: 20%;
@@ -37,7 +37,7 @@
   -webkit-box-shadow: 2px 2px 5px rgba(33, 33, 33, 0.7);
   padding: 0.5em;
   float: left;
-  margin-left: 1.2%;
+  margin-left: 3%;
   margin-top: 4.7%;
   border-radius: 10px;
   font-family: 'Baloo', cursive;
@@ -139,14 +139,14 @@
   float: left;
   position: absolute;
   top:5.5em;
-  left: 22%;
+  left:0%;
   height: 2.5em;
-  width: 65.5%;
+  width: 69%;
   border-radius: 12px;
   border: 1px solid #333;
   margin-top: .1%;
   margin-bottom: .5%;
-  margin-left: 2%;
+  margin-left: 25%;
   background-color:#2a2d2d91;
   border-style: solid;
   border-width: medium;
@@ -263,7 +263,6 @@
 }
 
 .contact-div{
-  display: inline;
   justify-content: center;
   margin-left: 30%;
   margin-right: 40%;
