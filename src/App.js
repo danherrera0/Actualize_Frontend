@@ -43,7 +43,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch(`${localhost_url}tasks`)
+    fetch(`${heroku_url}tasks`)
       .then(r => r.json())
       .then(tasks => {
         let myTasks = tasks.reduce((final, elem) => {
@@ -53,7 +53,7 @@ class App extends React.Component {
           tasks: myTasks
         });
       });
-    fetch(`${localhost_url}columns`)
+    fetch(`${heroku_url}columns`)
       .then(r => r.json())
       .then(apiColumns => {
         let myColumns = apiColumns.reduce((final, elem) => {
@@ -104,7 +104,7 @@ class App extends React.Component {
     let startIds = start.task_ids.map(task_id => {
       return this.state.tasks[task_id];
     });
-    fetch(`${localhost_url}columns/${start.id}`, {
+    fetch(`${heroku_url}columns/${start.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -122,7 +122,7 @@ class App extends React.Component {
     let finishIds = finish.task_ids.map(task_id => {
       return this.state.tasks[task_id];
     });
-    fetch(`${localhost_url}columns/${finish.id}`, {
+    fetch(`${heroku_url}columns/${finish.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -146,7 +146,7 @@ class App extends React.Component {
       dragged.completed = false;
     }
     console.log(draggedId)
-    fetch(`${localhost_url}tasks/${draggedId}`, {
+    fetch(`${heroku_url}tasks/${draggedId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -156,7 +156,7 @@ class App extends React.Component {
         column_id: finish.id,
         content: dragged.content,
       })
-    }).then(response => fetch(`${localhost_url}tasks`)
+    }).then(response => fetch(`${heroku_url}tasks`)
       .then(r => r.json())
       .then(tasks => {
         let myTasks = tasks.reduce((final, elem) => {
@@ -279,7 +279,7 @@ class App extends React.Component {
   deleteCard = (event, card) => {
     delete this.state.tasks[card.task_id]
     let deletedId = parseInt(event.target.id.split("-").flat()[1]);
-    fetch(`${localhost_url}tasks/${deletedId}`, {
+    fetch(`${heroku_url}tasks/${deletedId}`, {
       method: "DELETE"
     });
     let column1task_ids = this.state.columns["column-1"].task_ids;
